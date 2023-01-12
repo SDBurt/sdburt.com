@@ -4,6 +4,11 @@ import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
 
+import useSWR from 'swr'
+import fetcher from 'lib/fetcher'
+import { Views } from 'lib/types'
+import ViewCounter from '@/components/ViewCounter'
+
 const DEFAULT_LAYOUT = 'PostLayout'
 
 export async function getStaticPaths() {

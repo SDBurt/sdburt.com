@@ -42,6 +42,7 @@ export const PageSEO = ({ title, description }) => {
       ogType="website"
       ogImage={ogImageUrl}
       twImage={twImageUrl}
+      canonicalUrl={null}
     />
   )
 }
@@ -58,6 +59,7 @@ export const TagSEO = ({ title, description }) => {
         ogType="website"
         ogImage={ogImageUrl}
         twImage={twImageUrl}
+        canonicalUrl={null}
       />
       <Head>
         <link

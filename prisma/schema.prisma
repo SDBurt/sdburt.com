@@ -8,7 +8,7 @@ datasource db {
     relationMode = "prisma"
 }
 
-model views {
-    slug  String @id @db.VarChar(128)
-    count BigInt @default(1)
-}
+// model views {
+//     slug  String @id @db.VarChar(128)
+//     count BigInt @default(1)
+// }
