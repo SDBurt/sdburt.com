@@ -54,6 +54,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
             disabled={subscribed}
           />
         </div>
+
         <div className="mt-2 flex w-full rounded-md shadow-sm sm:mt-0 sm:ml-3">
           <button
             className={`w-full rounded-md bg-primary-500 py-2 px-4 font-medium text-white sm:py-0 ${
@@ -65,6 +66,7 @@ const NewsletterForm = ({ title = 'Subscribe to the newsletter' }) => {
             {subscribed ? 'Thank you!' : 'Sign up'}
           </button>
         </div>
+
       </form>
       {error && (
         <div className="w-72 pt-2 text-sm text-red-500 dark:text-red-400 sm:w-96">{message}</div>

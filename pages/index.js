@@ -28,6 +28,7 @@ export default function Home({ posts }) {
             {siteMetadata.description}
           </p>
         </div>
+
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
