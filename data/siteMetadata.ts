@@ -1,4 +1,4 @@
-const siteMetadata = {
+export const siteMetadata = {
   title: 'Sean Burt - Portfolio Site and Blog',
   author: 'Sean Burt',
   headerTitle: 'SDBurt',
@@ -83,4 +83,4 @@ const siteMetadata = {
   },
 }
 
-module.exports = siteMetadata
+export default siteMetadata
