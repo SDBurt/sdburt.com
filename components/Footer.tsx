@@ -22,19 +22,22 @@ export default function Footer() {
         <NowPlaying />
         <div className="grid w-full max-w-2xl grid-cols-1 gap-4 pb-8 sm:grid-cols-4">
           <div className="flex flex-col space-y-4">
-            <Link href="/" className="text-gray-500 transition hover:text-gray-600">
+            {/* <Link href="/" className="text-gray-500 transition hover:text-gray-600">
               Home
+            </Link> */}
+            <Link href="/about" className="text-gray-500 transition hover:text-gray-600">
+              About
             </Link>
-            <Link href="/blog" className="text-gray-500 transition hover:text-gray-600">
-              Blog
+            <Link href="/tweets" className="text-gray-500 transition hover:text-gray-600">
+              Tweets
             </Link>
           </div>
           <div className="flex flex-col space-y-4">
+            <Link href="/blog" className="text-gray-500 transition hover:text-gray-600">
+              Blog
+            </Link>
             <Link href="/tags" className="text-gray-500 transition hover:text-gray-600">
               Tags
-            </Link>
-            <Link href="/about" className="text-gray-500 transition hover:text-gray-600">
-              About
             </Link>
           </div>
           <div className="flex flex-col space-y-4">

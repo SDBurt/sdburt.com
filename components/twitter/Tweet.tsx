@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { format } from 'date-fns'
+import formatDate from '@/lib/utils/formatDate'
 
 /**
  * Supports plain text, images, quote tweets.
@@ -105,7 +105,7 @@ export default function Tweet({
         rel="noopener noreferrer"
       >
         <time title={`Time Posted: ${createdAt.toUTCString()}`} dateTime={createdAt.toISOString()}>
-          {format(createdAt, 'h:mm a - MMM d, y')}
+          {formatDate(created_at)}
         </time>
       </a>
       <div className="mt-2 flex text-sm !text-gray-700 dark:!text-gray-300">
