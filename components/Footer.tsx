@@ -46,13 +46,6 @@ export default function Footer() {
             <ExternalLink href={siteMetadata.kaggle}>Kaggle</ExternalLink>
           </div>
         </div>
-        {/* <div className="mb-1 flex space-x-4">
-          <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
-          <SocialIcon kind="github" href={siteMetadata.github} size={6} />
-          <SocialIcon kind="kaggle" href={siteMetadata.kaggle} size={6} />
-          <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={6} />
-          <SocialIcon kind="twitter" href={siteMetadata.twitter} size={6} />
-        </div> */}
         <hr className="border-1 mb-4 w-full border-gray-200 dark:border-gray-800" />
         <div className="mb-4 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <div>{siteMetadata.author}</div>
