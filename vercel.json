@@ -1,10 +1,4 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/stats/:match*",
-      "destination": "https://analytics.umami.is/:match*"
-    }
-  ]
+  "cleanUrls": true
 }
