@@ -7,8 +7,8 @@ const isProduction = process.env.NODE_ENV === 'production'
 const Analytics = () => {
   return (
     <>
-      {isProduction && siteMetadata.analytics.umamiWebsiteId && <Umami />}
       {isProduction && siteMetadata.analytics.vercelAnalytics && <VercelAnalytics />}
+      {isProduction && siteMetadata.analytics.umamiWebsiteId && <Umami />}
     </>
   )
 }

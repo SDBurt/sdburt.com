@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes'
-import lodash from 'lodash'
 import { siteMetadata } from '@/data/siteMetadata'
 
 const Giscus = () => {
@@ -18,7 +17,6 @@ const Giscus = () => {
   const LoadComments = useCallback(() => {
     setEnabledLoadComments(false)
 
-    const config = lodash.get(siteMetadata.comment.giscusConfig)
     const {
       repo,
       repositoryId,
@@ -29,7 +27,7 @@ const Giscus = () => {
       metadata,
       inputPosition,
       lang,
-    } = config
+    } = siteMetadata.comment.giscusConfig
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
