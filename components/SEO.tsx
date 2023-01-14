@@ -1,6 +1,11 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import siteMetadata from '@/data/siteMetadata'
+import { siteMetadata } from '@/data/siteMetadata'
+
+type PageSEOType = {
+  title: string
+  description: string
+}
 
 const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl }) => {
   const router = useRouter()
@@ -32,7 +37,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
   )
 }
 
-export const PageSEO = ({ title, description }) => {
+export const PageSEO = ({ title, description }: PageSEOType) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
   return (

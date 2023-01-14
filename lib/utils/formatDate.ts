@@ -1,11 +1,12 @@
-import siteMetadata from '@/data/siteMetadata'
+import { siteMetadata } from '@/data/siteMetadata'
 
 const formatDate = (date) => {
-  const options = {
+  const options: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   }
+
   const now = new Date(date).toLocaleDateString(siteMetadata.locale, options)
 
   return now

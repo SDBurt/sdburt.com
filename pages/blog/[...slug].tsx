@@ -3,11 +3,7 @@ import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-
-import useSWR from 'swr'
-import fetcher from 'lib/fetcher'
-import { Views } from 'lib/types'
-import ViewCounter from '@/components/ViewCounter'
+import lodash from 'lodash'
 
 const DEFAULT_LAYOUT = 'PostLayout'
 
@@ -29,7 +25,7 @@ export async function getStaticProps({ params }) {
   const prev = allPosts[postIndex + 1] || null
   const next = allPosts[postIndex - 1] || null
   const post = await getFileBySlug('blog', params.slug.join('/'))
-  const authorList = post.frontMatter.authors || ['default']
+  const authorList = lodash.get(post.frontMatter, 'authors', ['default'])
   const authorPromise = authorList.map(async (author) => {
     const authorResults = await getFileBySlug('authors', [author])
     return authorResults.frontMatter

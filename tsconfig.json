@@ -23,6 +23,15 @@
       "@/css/*": ["css/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "next.config.js",
+    "scripts/compose.js",
+    "scripts/generate-sitemap.js",
+    "scripts/next-remote-watch.js",
+    "data/siteMetadata.js"
+  ],
   "exclude": ["node_modules"]
 }

@@ -5,11 +5,12 @@
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
     "dev": "next dev",
-    "build": "next build && node ./scripts/generate-sitemap",
+    "build": "next build && node ./scripts/generate-sitemap.js",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "type-check": "tsc"
   },
   "dependencies": {
     "@fontsource/inter": "4.5.2",
@@ -18,6 +19,7 @@
     "@next/font": "13.0.2",
     "@prisma/client": "^4.8.1",
     "@tailwindcss/typography": "^0.5.9",
+    "@vercel/analytics": "^0.1.8",
     "classnames": "^2.3.2",
     "esbuild": "^0.13.15",
     "github-slugger": "^1.5.0",
@@ -49,6 +51,8 @@
     "@svgr/webpack": "^6.5.1",
     "@tailwindcss/forms": "^0.5.3",
     "@types/react": "^18.0.26",
+    "@types/node": "^12.12.21",
+    "@types/react-dom": "^17.0.1",
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
     "dedent": "^0.7.0",
@@ -65,7 +69,6 @@
     "postcss": "^8.4.20",
     "prettier": "^2.8.2",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "prisma": "^4.8.1",
     "socket.io": "^4.5.4",
     "socket.io-client": "^4.5.4",
     "typescript": "^4.9.4"
