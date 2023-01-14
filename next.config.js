@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const ContentSecurityPolicy = `
   default-src 'self' sdburt.com *.sdburt.com;
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app vitals.vercel-insights.com;
-  child-src sdburt.com *.sdburt.com;
+  child-src sdburt.com *.sdburt.com sdburt-com.vercel.app *.sdburt-com.vercel.app;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
