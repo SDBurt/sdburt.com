@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import formatDate from '@/lib/utils/formatDate'
+import formatDate from '@/lib/formatDate'
 
 /**
  * Supports plain text, images, quote tweets.

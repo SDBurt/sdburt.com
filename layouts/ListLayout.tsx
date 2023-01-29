@@ -3,7 +3,7 @@ import Tag from '@/components/Tag'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import type { PaginationProps } from '@/components/Pagination'
-import formatDate from '@/lib/utils/formatDate'
+import formatDate from '@/lib/formatDate'
 
 interface ListLayoutProps {
   posts?: any[]
