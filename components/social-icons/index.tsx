@@ -1,8 +1,8 @@
-import Mail from './mail.svg'
-import Github from './github.svg'
-import Linkedin from './linkedin.svg'
-import Twitter from './twitter.svg'
-import Kaggle from './kaggle.svg'
+import Mail from '@/components/social-icons/mail.svg'
+import Github from '@/components/social-icons/github.svg'
+import Linkedin from '@/components/social-icons/linkedin.svg'
+import Twitter from '@/components/social-icons/twitter.svg'
+import Kaggle from '@/components/social-icons/kaggle.svg'
 
 // Icons taken from: https://simpleicons.org/
 
@@ -14,7 +14,7 @@ const components = {
   twitter: Twitter,
 }
 
-const SocialIcon = ({ kind, href, size = 8 }) => {
+const SocialIcon = ({ kind, href, size = 6 }) => {
   if (!href || (kind === 'mail' && !/^mailto:\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(href)))
     return null
 

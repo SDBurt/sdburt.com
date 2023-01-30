@@ -1,5 +1,5 @@
 exports.siteMetadata = {
-  title: 'Sean Burt - Portfolio Site and Blog',
+  title: 'Portfolio Site and Blog',
   author: 'Sean Burt',
   headerTitle: 'SDBurt',
   description: 'A blog and portfolio site created with Next.js and Tailwind.css',
