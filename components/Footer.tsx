@@ -26,9 +26,7 @@ export default function Footer() {
         <Separator />
         <div className="flex w-full flex-row items-center justify-between space-x-2 text-gray-500 dark:text-gray-400">
           <div className="flex flex-row space-x-2 py-4">
-            <div>{siteMetadata.author}</div>
-            {/* <div>{` • `}</div> */}
-            <div>{`© ${new Date().getFullYear()}`}</div>
+            <div>Made with ♥️ by {siteMetadata.author}</div>
           </div>
           <div className="flex items-center justify-center py-4">
             <div className="flex flex-row space-x-4">
