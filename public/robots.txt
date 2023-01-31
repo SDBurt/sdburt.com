@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://sdburt.com/sitemap.xml

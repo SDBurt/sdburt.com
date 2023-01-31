@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -16,18 +17,21 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
-    }
+      "@/*": ["./*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next.config.js",
-    "scripts/compose.js",
-    "scripts/generate-sitemap.js",
-    "scripts/next-remote-watch.js",
-    "data/siteMetadata.js"
+    ".next/types/**/*.ts",
+    ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]
 }
