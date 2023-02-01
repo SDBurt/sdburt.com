@@ -1,18 +1,12 @@
 import Image from "next/image";
 import { name, about, avatar } from "lib/info";
-import { GitHubIcon, TwitterIcon, ViewsIcon } from "@/components/icons";
+import { Technologies } from "@/components/technologies";
 
 export const revalidate = 60;
 
 export default async function HomePage() {
-  // const [nowPlaying] = await Promise.all([
-  //   getNowPlaying(),
-  // ]);
-
-  // console.log(nowPlaying)
-
   return (
-    <section className="">
+    <section>
       <div>
         <Image
           alt={name}
@@ -24,16 +18,14 @@ export default async function HomePage() {
         />
         <h1 className="font-bold text-3xl mt-2 font-serif">{name}</h1>
       </div>
-
       <p className="my-5 text-neutral-800 dark:text-neutral-200">{about()}</p>
-
-      {/* <div className="my-8">
-        <div className="flex flex-row space-x-4 text-neutral-500 dark:text-neutral-400">
-        <TwitterIcon height={24} width={24}/>
-        <GitHubIcon />
-        <ViewsIcon />
-        </div>
-      </div> */}
+      <h1 className="font-bold text-3xl mt-2 mb-4 font-serif">Technologies</h1>
+      <p className="my-5 text-neutral-800 dark:text-neutral-200">
+        Some of the technologies that I work with
+      </p>
+      <div className="py-2">
+        <Technologies />
+      </div>
     </section>
   );
 }

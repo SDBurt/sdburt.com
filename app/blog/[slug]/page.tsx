@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { Mdx } from "components/mdx";
 import { allBlogs } from "contentlayer/generated";
-import { getTweets } from "lib/twitter";
 import Balancer from "react-wrap-balancer";
 
 export async function generateStaticParams() {

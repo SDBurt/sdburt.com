@@ -1,18 +1,16 @@
 import Link from "next/link";
 import { allBlogs } from "contentlayer/generated";
-// import ViewCounter from './view-counter';
 
-// export const metadata = {
-//   title: 'Blog',
-//   description: 'Read my thoughts on software development, design, and more.',
-// };
+export const metadata = {
+  title: "Blog",
+  description: "Read my thoughts about software development or other topics",
+};
 
 export default async function BlogPage() {
-  // console.log(allBlogs)
-
   return (
     <section>
-      <h1 className="font-bold text-3xl font-serif mb-5">Blog</h1>
+      <h1 className="font-bold text-3xl font-serif">{metadata.title}</h1>
+      <p className="text-lg text-neutral-500 mb-5">{metadata.description}</p>
       {allBlogs
         .sort((a, b) => {
           if (new Date(a.publishedAt) > new Date(b.publishedAt)) {

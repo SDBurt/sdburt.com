@@ -1,4 +1,4 @@
-import { bio, services } from "@/lib/info";
+import { bio, services, priorities } from "@/lib/info";
 
 export default function AboutPage() {
   return (
@@ -13,6 +13,9 @@ export default function AboutPage() {
       <p className="my-5 text-neutral-800 dark:text-neutral-200">{bio()}</p>
       <p className="my-5  text-neutral-800 dark:text-neutral-200">
         {services()}
+      </p>
+      <p className="my-5  text-neutral-800 dark:text-neutral-200">
+        {priorities()}
       </p>
     </section>
   );
