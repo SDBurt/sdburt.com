@@ -1,4 +1,5 @@
 import { bio, services, priorities } from "@/lib/info";
+import Books from "@/components/books";
 
 export default function AboutPage() {
   return (
@@ -10,13 +11,36 @@ export default function AboutPage() {
       <p>
         {"During his free time, he works on personal projects and learning, such as machine-learning notebooks on Kaggle, courses on Udemy, or additions to his portfolio site."}
       </p> */}
-      <p className="my-5 text-neutral-800 dark:text-neutral-200">{bio()}</p>
+      <h2 className="my-5 font-semibold text-xl font-serif">Skill</h2>
+      <p className="text-neutral-800 dark:text-neutral-200">{bio()}</p>
+
+      {/* What I bring to a team */}
+      <h2 className="my-5 font-semibold text-xl font-serif">
+        What I bring to a Team
+      </h2>
       <p className="my-5  text-neutral-800 dark:text-neutral-200">
         {services()}
       </p>
+
+      {/* Priorities */}
+      <h2 className="my-5 font-semibold text-xl font-serif">Priorities</h2>
       <p className="my-5  text-neutral-800 dark:text-neutral-200">
         {priorities()}
       </p>
+
+      {/* Books */}
+      <div className="py-2">
+        <h1 className="font-bold text-3xl font-serif">Interests</h1>
+        <p className="my-5 text-neutral-800 dark:text-neutral-200">
+          I am pretty introverted, but I do enjoy going out for coffee with
+          friends, working on side projects, or trying out Kaggle Competitions.
+        </p>
+        <h2 className="my-5 font-semibold text-xl font-serif">Books</h2>
+        <p className="my-5 text-neutral-800 dark:text-neutral-200">
+          Here are some of the books I am currently reading.
+        </p>
+        <Books />
+      </div>
     </section>
   );
 }

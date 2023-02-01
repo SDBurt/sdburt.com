@@ -19,8 +19,6 @@ export const services = () => {
 };
 
 export const priorities = () => {
-  return `What is important to me has changed since graduating university. I was willing to work in less than ideal conditions and less pay if it meant that 
-    I would gain experience. Since gaining a lot of knowledge and skills in a professional environment, I hold a positive culture in higher regards. 
-    Working in a place that wants to build an inclusive and supporting environment is more important.
+  return `My priority in the workplace is building and contributing to a culture where everyone feels respected, heard, and supported. No one should feel less about themselves, and effort should be recognized.
     `;
 };

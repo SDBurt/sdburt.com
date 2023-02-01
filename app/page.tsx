@@ -19,11 +19,14 @@ export default async function HomePage() {
         <h1 className="font-bold text-3xl mt-2 font-serif">{name}</h1>
       </div>
       <p className="my-5 text-neutral-800 dark:text-neutral-200">{about()}</p>
-      <h1 className="font-bold text-3xl mt-2 mb-4 font-serif">Technologies</h1>
-      <p className="my-5 text-neutral-800 dark:text-neutral-200">
-        Some of the technologies that I work with
-      </p>
+      {/* Technologies */}
       <div className="py-2">
+        <h1 className="font-bold text-3xl mt-2 mb-4 font-serif">
+          Technologies
+        </h1>
+        <p className="my-5 text-neutral-800 dark:text-neutral-200">
+          Here are some of the technologies that I use.
+        </p>
         <Technologies />
       </div>
     </section>
