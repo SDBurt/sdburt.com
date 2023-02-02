@@ -42,7 +42,7 @@ export default function Home({ posts, projects }) {
             {projects.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { title, description, href } = frontMatter
               return (
-                <li key={href} className="py-8">
+                <li key={`project-${href}`} className="py-8">
                   <article>
                     <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                       <div className="space-y-2 xl:col-span-3">
@@ -89,7 +89,7 @@ export default function Home({ posts, projects }) {
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { slug, date, title, summary, tags } = frontMatter
               return (
-                <li key={slug} className="py-8">
+                <li key={`blog-${slug}`} className="py-8">
                   <article>
                     <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                       <dl>
