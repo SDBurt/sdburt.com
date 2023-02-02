@@ -1,7 +1,3 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
-
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
@@ -57,7 +53,7 @@ const securityHeaders = [
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = withBundleAnalyzer({
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: [
@@ -86,4 +82,4 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
-})
+}
