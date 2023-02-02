@@ -59,13 +59,16 @@ export default function Home({ posts, projects }) {
                           </p>
                         </div>
                         <div className="text-base font-medium leading-6">
-                          <Link
-                            href={href}
-                            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            aria-label={`Check out "${title}"`}
-                          >
-                            Check out &rarr;
-                          </Link>
+                          {!href && <p className="text-primary-500">WIP, Link soon.</p>}
+                          {href && (
+                            <Link
+                              href={href}
+                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                              aria-label={`Check out "${title}"`}
+                            >
+                              Check out &rarr;
+                            </Link>
+                          )}
                         </div>
                       </div>
                     </div>
