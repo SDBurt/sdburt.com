@@ -1,19 +1,8 @@
-import fs from 'fs'
-import matter from 'gray-matter'
-import path from 'path'
-import { getFiles } from '@/lib/mdx'
 import kebabCase from '@/lib/kebabCase'
 
-const root = process.cwd()
-
-export async function getAllTags(type) {
-  const files = await getFiles(type)
-
+export function getAllTags(blogs) {
   let tagCount = {}
-  // Iterate through each post, putting all found tags into `tags`
-  files.forEach((file) => {
-    const source = fs.readFileSync(path.join(root, 'data', type, file), 'utf8')
-    const { data } = matter(source)
+  blogs.forEach((data) => {
     if (data.tags && data.draft !== true) {
       data.tags.forEach((tag) => {
         const formattedTag = kebabCase(tag)

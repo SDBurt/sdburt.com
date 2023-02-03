@@ -2,12 +2,13 @@ import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import { siteMetadata } from '@/data/siteMetadata'
-import { getAllTags } from '@/lib/tags'
 import kebabCase from '@/lib/kebabCase'
 
-export async function getStaticProps() {
-  const tags = await getAllTags('blog')
+import { allBlogs } from '@/.contentlayer/generated'
+import { getAllTags } from '@/lib/tags'
 
+export async function getStaticProps() {
+  const tags = getAllTags(allBlogs)
   return { props: { tags } }
 }
 

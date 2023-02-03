@@ -1,3 +1,5 @@
+import { withContentlayer } from 'next-contentlayer'
+
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
@@ -53,7 +55,7 @@ const securityHeaders = [
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = {
+const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
@@ -83,3 +85,5 @@ module.exports = {
     ]
   },
 }
+
+export default withContentlayer(nextConfig)
