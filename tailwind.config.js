@@ -1,5 +1,5 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   experimental: {
@@ -28,7 +28,7 @@ module.exports = {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.emerald,
         gray: colors.neutral,
       },
       typography: (theme) => ({
@@ -169,4 +169,4 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('tailwindcss-animate'),
   ],
-}
+};
