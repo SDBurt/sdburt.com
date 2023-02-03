@@ -1,6 +1,4 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+import { withContentlayer } from 'next-contentlayer'
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
@@ -57,7 +55,7 @@ const securityHeaders = [
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = withBundleAnalyzer({
+const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
@@ -86,4 +84,6 @@ module.exports = withBundleAnalyzer({
       },
     ]
   },
-})
+}
+
+export default withContentlayer(nextConfig)

@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Track(track) {
   return (
-    <div className="mt-8 flex w-full max-w-3xl flex-row items-center border-b border-gray-200 pb-8 dark:border-gray-800">
+    <div className="mt-4 flex w-full max-w-3xl flex-row items-center border-b border-gray-200 pb-4 dark:border-gray-800">
       <p className="text-sm font-bold text-gray-400 dark:text-gray-600">{track.ranking}</p>
       <div className="flex flex-col object-center pl-3">
         <Image src={track.thumbnail} alt={`Album cover of ${track.name}`} height={64} width={64} />

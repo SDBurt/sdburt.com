@@ -16,7 +16,3 @@ export type NowPlayingSong = {
 export type TopTracks = {
   tracks: Song[]
 }
-
-export type GitHub = {
-  stars: number
-}
