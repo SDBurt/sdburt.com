@@ -1,31 +1,31 @@
-import lodash from 'lodash'
-import PageTitle from '@/components/PageTitle'
+import lodash from 'lodash';
+import PageTitle from '@/components/PageTitle';
 
-import { allAuthors, authors } from '@/data/authors/default'
+import { allAuthors, authors } from '@/data/authors/default';
 
-import { allBlogs } from 'contentlayer/generated'
-import { Mdx } from '@/components/mdx'
-import PostLayout from '@/layouts/PostLayout'
+import { allBlogs } from 'contentlayer/generated';
+import { Mdx } from '@/components/mdx';
+import PostLayout from '@/layouts/PostLayout';
 
 export async function getStaticPaths() {
-  const paths = allBlogs.map((post) => post.slug)
+  const paths = allBlogs.map((post) => post.slug);
   return {
     paths,
     fallback: false,
-  }
+  };
 }
 
 export async function getStaticProps({ params }) {
-  const postIndex = allBlogs.findIndex((post) => post._raw.flattenedPath === params.slug)
-  const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug)
-  const next = allBlogs[postIndex - 1] || null
-  const prev = allBlogs[postIndex + 1] || null
+  const postIndex = allBlogs.findIndex((post) => post._raw.flattenedPath === params.slug);
+  const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug);
+  const next = allBlogs[postIndex - 1] || null;
+  const prev = allBlogs[postIndex + 1] || null;
   // console.log(post)
-  const authorList = lodash.get(post, 'authors', ['default'])
+  const authorList = lodash.get(post, 'authors', ['default']);
 
   const authorDetails = authorList.map((author) => {
-    return lodash.get(authors, author)
-  })
+    return lodash.get(authors, author);
+  });
 
   return {
     props: {
@@ -34,7 +34,7 @@ export async function getStaticProps({ params }) {
       prev,
       next,
     },
-  }
+  };
 }
 
 export default function Blog({ post, authorDetails, next, prev }) {
@@ -87,5 +87,5 @@ export default function Blog({ post, authorDetails, next, prev }) {
         </div>
       )}
     </>
-  )
+  );
 }

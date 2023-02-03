@@ -1,11 +1,11 @@
-import TopTracks from '@/components/spotify/TopTracks'
-import { PageSEO } from '@/components/SEO'
-import { sean } from '@/data/authors/default'
-import SocialIcon from '@/components/social-icons'
-import Image from 'next/image'
+import TopTracks from '@/components/spotify/TopTracks';
+import { PageSEO } from '@/components/SEO';
+import { sean } from '@/data/authors/default';
+import SocialIcon from '@/components/social-icons';
+import Image from 'next/image';
 
 export default function About({ authorDetails }) {
-  const { name, avatar, occupation, company, email, twitter, kaggle, linkedin, github, bio } = sean
+  const { name, avatar, occupation, company, email, twitter, kaggle, linkedin, github, bio } = sean;
 
   return (
     <>
@@ -51,5 +51,5 @@ export default function About({ authorDetails }) {
         </div>
       </div>
     </>
-  )
+  );
 }
