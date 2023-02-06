@@ -4,13 +4,12 @@ import { withContentlayer } from 'next-contentlayer';
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app vitals.vercel-insights.com;
-  child-src sdburt.com *.sdburt.com sdburt-com.vercel.app *.sdburt-com.vercel.app;
+  child-src 'self' sdburt.com *.sdburt.com sdburt-com.vercel.app *.sdburt-com.vercel.app;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
   font-src 'self';
-  frame-src giscus.app;
   report-uri vitals.vercel-insights.com;
 `;
 

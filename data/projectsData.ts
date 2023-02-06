@@ -17,6 +17,6 @@ export const projectsData = [
     // imgSrc: '/static/images/google.png',
     href: 'https://refocus.vercel.app',
   },
-]
+];
 
-export default projectsData
+export default projectsData;

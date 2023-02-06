@@ -1,9 +1,9 @@
-import useSWR from 'swr'
-import { useEffect } from 'react'
-import { animate } from 'motion'
+import useSWR from 'swr';
+import { useEffect } from 'react';
+import { animate } from 'motion';
 
-import fetcher from 'lib/fetcher'
-import { NowPlayingSong } from 'lib/types'
+import fetcher from 'lib/fetcher';
+import { NowPlayingSong } from 'lib/types';
 
 function AnimatedBars() {
   useEffect(() => {
@@ -21,7 +21,7 @@ function AnimatedBars() {
         repeat: Infinity,
         easing: ['ease-in-out'],
       }
-    )
+    );
     animate(
       '#bar2',
       {
@@ -37,7 +37,7 @@ function AnimatedBars() {
         repeat: Infinity,
         easing: ['ease-in-out'],
       }
-    )
+    );
     animate(
       '#bar3',
       {
@@ -53,8 +53,8 @@ function AnimatedBars() {
         repeat: Infinity,
         easing: ['ease-in-out'],
       }
-    )
-  }, [])
+    );
+  }, []);
 
   return (
     <div className="flex w-auto items-end overflow-hidden">
@@ -62,11 +62,11 @@ function AnimatedBars() {
       <span id="bar2" className="mr-[3px] h-1 w-1 bg-gray-300 dark:bg-gray-500" />
       <span id="bar3" className="h-3 w-1 bg-gray-300 opacity-80 dark:bg-gray-500" />
     </div>
-  )
+  );
 }
 
 export default function NowPlaying() {
-  const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher)
+  const { data } = useSWR<NowPlayingSong>('/api/now-playing', fetcher);
 
   return (
     <div className="flex w-full flex-row-reverse items-center space-x-0 sm:flex-row sm:space-x-2">
@@ -101,5 +101,5 @@ export default function NowPlaying() {
         </p>
       </div>
     </div>
-  )
+  );
 }

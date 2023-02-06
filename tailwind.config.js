@@ -1,5 +1,5 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   experimental: {
@@ -11,6 +11,7 @@ module.exports = {
     './layouts/**/*.{js,ts,tsx}',
     './lib/**/*.{js,ts,tsx}',
     './data/**/*.mdx',
+    './content/**/*.mdx',
   ],
   darkMode: 'class',
   theme: {
@@ -169,4 +170,4 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('tailwindcss-animate'),
   ],
-}
+};

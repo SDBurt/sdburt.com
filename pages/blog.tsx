@@ -1,30 +1,25 @@
-import { siteMetadata } from '@/data/siteMetadata'
-import ListLayout from '@/layouts/ListLayout'
-import { PageSEO } from '@/components/SEO'
-import { allBlogs } from '@/.contentlayer/generated'
+import { allBlogs } from '@/.contentlayer/generated';
+import Link from 'next/link';
 
-export const POSTS_PER_PAGE = 5
+export const POSTS_PER_PAGE = 5;
 
 export async function getStaticProps() {
-  const initialDisplayPosts = allBlogs.slice(0, POSTS_PER_PAGE)
-  const pagination = {
-    currentPage: 1,
-    totalPages: Math.ceil(allBlogs.length / POSTS_PER_PAGE),
-  }
-
-  return { props: { initialDisplayPosts, posts: allBlogs, pagination } }
+  return { props: { posts: allBlogs } };
 }
 
-export default function BlogPage({ posts, initialDisplayPosts, pagination }) {
+export default function BlogPage({ posts }) {
   return (
-    <>
-      <PageSEO title={`Blog - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <ListLayout
-        posts={posts}
-        initialDisplayPosts={initialDisplayPosts}
-        pagination={pagination}
-        title="All Posts"
-      />
-    </>
-  )
+    <ul>
+      {posts.map((post) => {
+        return (
+          <li key={post.id}>
+            <ul>
+              <Link href={post.slug}>{post.title}</Link>
+              <p>{post.summary}</p>
+            </ul>
+          </li>
+        );
+      })}
+    </ul>
+  );
 }

@@ -1,24 +1,21 @@
-import '@/css/tailwind.css'
-import 'katex/dist/katex.css'
-import '@fontsource/inter/variable-full.css'
+import Head from 'next/head';
 
-import { ThemeProvider } from 'next-themes'
-import Head from 'next/head'
+import '@/css/tailwind.css';
 
-import { siteMetadata } from '@/data/siteMetadata'
-import Analytics from '@/components/analytics'
-import LayoutWrapper from '@/components/LayoutWrapper'
+import Analytics from '@/components/analytics';
+
+import Layout from '@/components/layout';
 
 export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+    <>
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-      <LayoutWrapper>
+      <Layout>
         <Component {...pageProps} />
-        <Analytics />
-      </LayoutWrapper>
-    </ThemeProvider>
-  )
+      </Layout>
+      <Analytics />
+    </>
+  );
 }
