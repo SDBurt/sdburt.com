@@ -1,4 +1,4 @@
-import { withContentlayer } from 'next-contentlayer'
+import { withContentlayer } from 'next-contentlayer';
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
@@ -12,7 +12,7 @@ const ContentSecurityPolicy = `
   font-src 'self';
   frame-src giscus.app;
   report-uri vitals.vercel-insights.com;
-`
+`;
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -50,7 +50,7 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=()',
   },
-]
+];
 
 /**
  * @type {import('next').NextConfig}
@@ -72,9 +72,9 @@ const nextConfig = {
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
-    })
+    });
 
-    return config
+    return config;
   },
   async headers() {
     return [
@@ -82,8 +82,8 @@ const nextConfig = {
         source: '/(.*)',
         headers: securityHeaders,
       },
-    ]
+    ];
   },
-}
+};
 
-export default withContentlayer(nextConfig)
+export default withContentlayer(nextConfig);

@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "serve": "next start",
-    "lint": "next lint --fix --dir pages --dir components --dir lib",
+    "lint": "next lint --dir .",
+    "lint-fix": "next lint --fix --dir .",
     "preview": "next build && next start",
     "prepare": "husky install",
     "type-check": "tsc"
