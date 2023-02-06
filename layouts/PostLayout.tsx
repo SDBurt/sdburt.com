@@ -1,18 +1,18 @@
-import Link from '@/components/Link'
-import PageTitle from '@/components/PageTitle'
-import SectionContainer from '@/components/SectionContainer'
-import { BlogSEO } from '@/components/SEO'
-import Image from '@/components/Image'
-import Tag from '@/components/Tag'
-import { siteMetadata } from '@/data/siteMetadata'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import Link from '@/components/Link';
+import PageTitle from '@/components/PageTitle';
+import SectionContainer from '@/components/SectionContainer';
+import { BlogSEO } from '@/components/SEO';
+import Image from '@/components/Image';
+import Tag from '@/components/Tag';
+import { siteMetadata } from '@/data/siteMetadata';
+import ScrollTopAndComment from '@/components/ScrollTopAndComment';
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
   year: 'numeric',
   month: 'long',
   day: 'numeric',
-}
+};
 
 export default function PostLayout({ authors, slug, date, title, tags, children, next, prev }) {
   return (
@@ -138,5 +138,5 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
         </div>
       </article>
     </SectionContainer>
-  )
+  );
 }
