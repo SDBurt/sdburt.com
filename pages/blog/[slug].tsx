@@ -1,7 +1,7 @@
 import lodash from 'lodash';
 import PageTitle from '@/components/PageTitle';
 
-import { allAuthors, authors } from '@/data/authors/default';
+import { authors } from '@/data/authors/default';
 
 import { allBlogs } from 'contentlayer/generated';
 import { Mdx } from '@/components/mdx';
