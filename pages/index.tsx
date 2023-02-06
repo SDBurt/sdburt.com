@@ -1,24 +1,24 @@
-import Link from '@/components/Link';
-import { PageSEO } from '@/components/SEO';
-import Tag from '@/components/Tag';
-import { siteMetadata } from '@/data/siteMetadata';
+import Link from '@/components/Link'
+import { PageSEO } from '@/components/SEO'
+import Tag from '@/components/Tag'
+import { siteMetadata } from '@/data/siteMetadata'
 // import { getAllFilesFrontMatter } from '@/lib/mdx'
-import formatDate from '@/lib/formatDate';
-import projectsData from '@/data/projectsData';
+import formatDate from '@/lib/formatDate'
+import projectsData from '@/data/projectsData'
 
-import { compareDesc, format, parseISO } from 'date-fns';
-import { allBlogs } from 'contentlayer/generated';
+import { compareDesc, format, parseISO } from 'date-fns'
+import { allBlogs } from 'contentlayer/generated'
 
-const MAX_DISPLAY = 5;
+const MAX_DISPLAY = 5
 
 export async function getStaticProps() {
   // const posts = await getAllFilesFrontMatter('blog')
 
   const posts = allBlogs.sort((a, b) => {
-    return compareDesc(new Date(a.date), new Date(b.date));
-  });
+    return compareDesc(new Date(a.date), new Date(b.date))
+  })
 
-  return { props: { posts, projects: projectsData } };
+  return { props: { posts, projects: projectsData } }
 }
 
 export default function Home({ posts, projects }) {
@@ -47,7 +47,7 @@ export default function Home({ posts, projects }) {
           <ul>
             {!projects.length && 'No posts found.'}
             {projects.slice(0, MAX_DISPLAY).map((frontMatter) => {
-              const { title, description, href } = frontMatter;
+              const { title, description, href } = frontMatter
               return (
                 <li key={`project-${href}`} className="py-8">
                   <article>
@@ -81,7 +81,7 @@ export default function Home({ posts, projects }) {
                     </div>
                   </article>
                 </li>
-              );
+              )
             })}
           </ul>
         </div>
@@ -94,7 +94,7 @@ export default function Home({ posts, projects }) {
           <ul>
             {!posts.length && 'No posts found.'}
             {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
-              const { slug, date, title, summary, tags } = frontMatter;
+              const { slug, date, title, summary, tags } = frontMatter
               return (
                 <li key={`blog-${slug}`} className="py-8">
                   <article>
@@ -136,7 +136,7 @@ export default function Home({ posts, projects }) {
                     </div>
                   </article>
                 </li>
-              );
+              )
             })}
           </ul>
         </div>
@@ -154,5 +154,5 @@ export default function Home({ posts, projects }) {
         </div>
       )}
     </>
-  );
+  )
 }

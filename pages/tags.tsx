@@ -1,19 +1,19 @@
-import Link from '@/components/Link';
-import { PageSEO } from '@/components/SEO';
-import Tag from '@/components/Tag';
-import { siteMetadata } from '@/data/siteMetadata';
-import kebabCase from '@/lib/kebabCase';
+import Link from '@/components/Link'
+import { PageSEO } from '@/components/SEO'
+import Tag from '@/components/Tag'
+import { siteMetadata } from '@/data/siteMetadata'
+import kebabCase from '@/lib/kebabCase'
 
-import { allBlogs } from '@/.contentlayer/generated';
-import { getAllTags } from '@/lib/tags';
+import { allBlogs } from '@/.contentlayer/generated'
+import { getAllTags } from '@/lib/tags'
 
 export async function getStaticProps() {
-  const tags = getAllTags(allBlogs);
-  return { props: { tags } };
+  const tags = getAllTags(allBlogs)
+  return { props: { tags } }
 }
 
 export default function Tags({ tags }) {
-  const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a]);
+  const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a])
   return (
     <>
       <PageSEO title={`Tags - ${siteMetadata.author}`} description="Things I blog about" />
@@ -36,10 +36,10 @@ export default function Tags({ tags }) {
                   {` (${tags[t]})`}
                 </Link>
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </>
-  );
+  )
 }

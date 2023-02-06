@@ -1,13 +1,13 @@
-import Link from '@/components/Link';
+import Link from '@/components/Link'
 
 export type PaginationProps = {
-  totalPages: number;
-  currentPage: number;
-};
+  totalPages: number
+  currentPage: number
+}
 
 export default function Pagination({ totalPages, currentPage }) {
-  const prevPage = parseInt(currentPage) - 1 > 0;
-  const nextPage = parseInt(currentPage) + 1 <= parseInt(totalPages);
+  const prevPage = parseInt(currentPage) - 1 > 0
+  const nextPage = parseInt(currentPage) + 1 <= parseInt(totalPages)
 
   return (
     <div className="space-y-2 pt-6 pb-8 md:space-y-5">
@@ -37,5 +37,5 @@ export default function Pagination({ totalPages, currentPage }) {
         )}
       </nav>
     </div>
-  );
+  )
 }

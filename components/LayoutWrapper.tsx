@@ -1,16 +1,16 @@
-'use client';
+'use client'
 
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
-import { siteMetadata } from '@/data/siteMetadata';
-import headerNavLinks from '@/data/headerNavLinks';
-import SectionContainer from '@/components/SectionContainer';
-import Footer from '@/components/Footer';
-import MobileNav from '@/components/MobileNav';
-import ThemeSwitch from '@/components/ThemeSwitch';
+import { siteMetadata } from '@/data/siteMetadata'
+import headerNavLinks from '@/data/headerNavLinks'
+import SectionContainer from '@/components/SectionContainer'
+import Footer from '@/components/Footer'
+import MobileNav from '@/components/MobileNav'
+import ThemeSwitch from '@/components/ThemeSwitch'
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 import {
   NavigationMenu,
@@ -18,13 +18,13 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+} from '@/components/ui/navigation-menu'
 
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 
 function NavItem({ href, text }) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+  const router = useRouter()
+  const isActive = router.asPath === href
 
   return (
     <NavigationMenuItem>
@@ -40,7 +40,7 @@ function NavItem({ href, text }) {
         </NavigationMenuLink>
       </Link>
     </NavigationMenuItem>
-  );
+  )
 }
 
 const LayoutWrapper = ({ children }) => {
@@ -80,7 +80,7 @@ const LayoutWrapper = ({ children }) => {
         </div>
       </SectionContainer>
     </>
-  );
-};
+  )
+}
 
-export default LayoutWrapper;
+export default LayoutWrapper

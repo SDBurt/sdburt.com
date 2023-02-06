@@ -18,10 +18,10 @@ export const sean = {
       enjoys working with new technologies and is excited to see people use and enjoy what he has
       created. During his free time, he works on personal projects and learning, such as
       machine-learning notebooks on Kaggle, courses on Udemy, or additions to his portfolio site.`,
-};
+}
 
-export const allAuthors = ['default', 'sean'];
+export const allAuthors = ['default', 'sean']
 export const authors = {
   default: sean,
   sean: sean,
-};
+}

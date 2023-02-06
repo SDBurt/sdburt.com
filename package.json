@@ -9,6 +9,7 @@
     "serve": "next start",
     "lint": "next lint",
     "lint-fix": "next lint --fix",
+    "prettier": "prettier -w \"**/*.*\"",
     "preview": "next build && next start",
     "prepare": "husky install",
     "type-check": "tsc"
