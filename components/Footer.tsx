@@ -34,9 +34,6 @@ export default function Footer() {
           </div>
           <div className="flex items-center justify-center py-4">
             <div className="flex flex-row space-x-4">
-              {/* <SocialIcon size={6} kind="linkedin" href={siteMetadata.linkedin} />
-              <SocialIcon size={6} kind="twitter" href={siteMetadata.twitter} />
-              <SocialIcon size={6} kind="github" href={siteMetadata.github} /> */}
               <Link href={siteMetadata.linkedin} className={'hover:text-primary-500'}>
                 <Icons.linkedin height={20} width={20} />
               </Link>

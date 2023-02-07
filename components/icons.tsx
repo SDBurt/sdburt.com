@@ -1,4 +1,7 @@
+import { Mail } from 'lucide-react';
+
 export const Icons = {
+  mail: ({ size = 20 }) => <Mail size={size} />,
   twitter: ({ height = 20, width = 20 }) => (
     <svg
       width={width}
