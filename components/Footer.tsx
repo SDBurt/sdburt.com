@@ -1,7 +1,6 @@
 import Link from '@/components/Link'
 import { siteMetadata } from '@/data/siteMetadata'
 import NowPlaying from '@/components/spotify/NowPlaying'
-import SocialIcon from '@/components/social-icons'
 import { Separator } from './ui/separator'
 
 const ExternalLink = ({ href, children }) => (
@@ -28,13 +27,13 @@ export default function Footer() {
           <div className="flex flex-row space-x-2 py-4">
             <div>Made with ♥️ by {siteMetadata.author}</div>
           </div>
-          <div className="flex items-center justify-center py-4">
+          {/* <div className="flex items-center justify-center py-4">
             <div className="flex flex-row space-x-4">
               <SocialIcon size={6} kind="linkedin" href={siteMetadata.linkedin} />
               <SocialIcon size={6} kind="twitter" href={siteMetadata.twitter} />
               <SocialIcon size={6} kind="github" href={siteMetadata.github} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
