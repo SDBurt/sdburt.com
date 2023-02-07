@@ -5,7 +5,7 @@ export const sean = {
   company: '',
   email: 'seandburt@gmail.com',
   twitter: 'https://twitter.com/SeanBurt8',
-  linkedin: 'https://www.linkedin.com/seandburt',
+  linkedin: 'https://www.linkedin.com/in/seandburt/',
   github: 'https://github.com/SDBurt',
   kaggle: 'https://www.kaggle.com/seandburt',
   bio: `Sean Burt is a software engineering graduate specializing in AI from the University of
