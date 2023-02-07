@@ -20,16 +20,6 @@
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "next.config.mjs",
-    "scripts/compose.js",
-    "scripts/generate-sitemap.js",
-    "scripts/next-remote-watch.js",
-    "data/siteMetadata.js",
-    ".contentlayer/generated"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next.config.mjs", ".contentlayer/generated"],
   "exclude": ["node_modules"]
 }
