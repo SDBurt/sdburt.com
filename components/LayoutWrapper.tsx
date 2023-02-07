@@ -33,7 +33,7 @@ function NavItem({ href, text }) {
           className={cn(
             navigationMenuTriggerStyle(),
             'hidden sm:inline-block',
-            isActive ? 'font-bold' : 'font-normal'
+            isActive ? 'bg-gray-100 font-bold dark:bg-neutral-800' : 'font-normal'
           )}
         >
           {text}
@@ -65,7 +65,7 @@ const LayoutWrapper = ({ children }) => {
             <div className="flex items-center text-base leading-5">
               {/* shadcn's nav */}
               <NavigationMenu>
-                <NavigationMenuList>
+                <NavigationMenuList className="space-x-1">
                   {headerNavLinks.map((link) => (
                     <NavItem key={link.href} text={link.title} href={link.href} />
                   ))}
