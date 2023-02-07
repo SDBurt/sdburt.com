@@ -1,5 +1,5 @@
-import Tweet from '@/components/twitter/Tweet'
-import { getTweets } from '@/lib/twitter'
+import Tweet from '@/components/twitter/Tweet';
+import { getTweets } from '@/lib/twitter';
 
 export default function Tweets({ tweets }) {
   return (
@@ -16,7 +16,7 @@ export default function Tweets({ tweets }) {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 export async function getStaticProps() {
@@ -25,7 +25,7 @@ export async function getStaticProps() {
     '1602318657325072385',
     '1457018296847437824',
     '1598740730423349248',
-  ])
+  ]);
 
-  return { props: { tweets } }
+  return { props: { tweets } };
 }

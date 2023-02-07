@@ -1,7 +1,7 @@
-import Link from '@/components/Link'
-import { siteMetadata } from '@/data/siteMetadata'
-import NowPlaying from '@/components/spotify/NowPlaying'
-import { Separator } from './ui/separator'
+import Link from '@/components/Link';
+import { siteMetadata } from '@/data/siteMetadata';
+import NowPlaying from '@/components/spotify/NowPlaying';
+import { Separator } from './ui/separator';
 
 const ExternalLink = ({ href, children }) => (
   <a
@@ -12,7 +12,7 @@ const ExternalLink = ({ href, children }) => (
   >
     {children}
   </a>
-)
+);
 
 export default function Footer() {
   return (
@@ -37,5 +37,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-import Image from '@/components/Image'
-import Link from '@/components/Link'
+import Image from '@/components/Image';
+import Link from '@/components/Link';
 
 interface CardProps {
-  title: string
-  description: string
-  imgSrc?: string
-  href?: string
+  title: string;
+  description: string;
+  imgSrc?: string;
+  href?: string;
 }
 
 const Card = ({ title, description, imgSrc, href }: CardProps) => (
@@ -58,6 +58,6 @@ const Card = ({ title, description, imgSrc, href }: CardProps) => (
       </div>
     </div>
   </div>
-)
+);
 
-export default Card
+export default Card;

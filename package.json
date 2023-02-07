@@ -9,6 +9,9 @@
     "serve": "next start",
     "analyze": "next build",
     "lint": "next lint --fix --dir pages --dir components --dir lib --dir layouts --dir scripts",
+    "fix:lint": "next lint --fix",
+    "prettier": "prettier -c .",
+    "fix:prettier": "prettier -w .",
     "prepare": "husky install",
     "type-check": "tsc"
   },
