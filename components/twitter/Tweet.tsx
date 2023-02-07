@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import formatDate from '@/lib/formatDate'
+import Image from 'next/image';
+import formatDate from '@/lib/formatDate';
 
 /**
  * Supports plain text, images, quote tweets.
@@ -16,15 +16,15 @@ export default function Tweet({
   public_metrics,
   referenced_tweets,
 }) {
-  const authorUrl = `https://twitter.com/${author.username}`
-  const likeUrl = `https://twitter.com/intent/like?tweet_id=${id}`
-  const retweetUrl = `https://twitter.com/intent/retweet?tweet_id=${id}`
-  const replyUrl = `https://twitter.com/intent/tweet?in_reply_to=${id}`
-  const tweetUrl = `https://twitter.com/${author.username}/status/${id}`
-  const createdAt = new Date(created_at)
+  const authorUrl = `https://twitter.com/${author.username}`;
+  const likeUrl = `https://twitter.com/intent/like?tweet_id=${id}`;
+  const retweetUrl = `https://twitter.com/intent/retweet?tweet_id=${id}`;
+  const replyUrl = `https://twitter.com/intent/tweet?in_reply_to=${id}`;
+  const tweetUrl = `https://twitter.com/${author.username}/status/${id}`;
+  const createdAt = new Date(created_at);
 
-  const formattedText = text.replace(/https:\/\/[\n\S]+/g, '').replace('&amp;', '&')
-  const quoteTweet = referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted')
+  const formattedText = text.replace(/https:\/\/[\n\S]+/g, '').replace('&amp;', '&');
+  const quoteTweet = referenced_tweets && referenced_tweets.find((t) => t.type === 'quoted');
 
   return (
     <div className="tweet my-4 w-full rounded-lg border border-gray-200 bg-white px-6 py-4 dark:border-gray-800 dark:bg-gray-900">
@@ -165,5 +165,5 @@ export default function Tweet({
         </a>
       </div>
     </div>
-  )
+  );
 }

@@ -58,4 +58,4 @@ exports.siteMetadata = {
       themeURL: '',
     },
   },
-}
+};

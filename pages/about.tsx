@@ -1,11 +1,13 @@
-import TopTracks from '@/components/spotify/TopTracks'
-import { PageSEO } from '@/components/SEO'
-import { sean } from '@/data/authors/default'
-import SocialIcon from '@/components/social-icons'
-import Image from 'next/image'
+import TopTracks from '@/components/spotify/TopTracks';
+import { PageSEO } from '@/components/SEO';
+import { sean } from '@/data/authors/default';
 
-export default function About({ authorDetails }) {
-  const { name, avatar, occupation, company, email, twitter, kaggle, linkedin, github, bio } = sean
+import Image from 'next/image';
+import Link from 'next/link';
+import Icons from '@/components/icons';
+
+export default function About() {
+  const { name, avatar, occupation, company, email, twitter, kaggle, linkedin, github, bio } = sean;
 
   return (
     <>
@@ -29,11 +31,24 @@ export default function About({ authorDetails }) {
             <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
             <div className="text-gray-500 dark:text-gray-400">{company}</div>
             <div className="flex space-x-3 pt-6">
-              <SocialIcon kind="mail" size={6} href={`mailto:${email}`} />
+              {/* <SocialIcon kind="mail" size={6} href={`mailto:${email}`} />
               <SocialIcon kind="github" size={6} href={github} />
               <SocialIcon kind="kaggle" size={6} href={kaggle} />
               <SocialIcon kind="linkedin" size={6} href={linkedin} />
-              <SocialIcon kind="twitter" size={6} href={twitter} />
+              <SocialIcon kind="twitter" size={6} href={twitter} /> */}
+
+              <Link href={`mailto:${email}`} className={'hover:text-primary-500'}>
+                <Icons.mail size={20} />
+              </Link>
+              <Link href={linkedin} className={'hover:text-primary-500'}>
+                <Icons.linkedin height={20} width={20} />
+              </Link>
+              <Link href={github} className={'hover:text-primary-500'}>
+                <Icons.github height={20} width={20} />
+              </Link>
+              <Link href={twitter} className={'hover:text-primary-500'}>
+                <Icons.twitter height={20} width={20} />
+              </Link>
             </div>
           </div>
           <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{bio}</div>
@@ -51,5 +66,5 @@ export default function About({ authorDetails }) {
         </div>
       </div>
     </>
-  )
+  );
 }

@@ -13,10 +13,10 @@ export const projectsData = [
   },
   {
     title: 'ReFocus',
-    description: `(WIP)A Pomodoro timer app with extra functionality aimed at refocusing your attention to what matters.`,
+    description: `A Pomodoro timer app with extra functionality aimed at refocusing your attention to what matters.`,
     // imgSrc: '/static/images/google.png',
     href: 'https://refocus.vercel.app',
   },
-]
+];
 
-export default projectsData
+export default projectsData;

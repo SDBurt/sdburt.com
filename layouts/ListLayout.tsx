@@ -1,15 +1,15 @@
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import { useState } from 'react'
-import Pagination from '@/components/Pagination'
-import type { PaginationProps } from '@/components/Pagination'
-import formatDate from '@/lib/formatDate'
+import Link from '@/components/Link';
+import Tag from '@/components/Tag';
+import { useState } from 'react';
+import Pagination from '@/components/Pagination';
+import type { PaginationProps } from '@/components/Pagination';
+import formatDate from '@/lib/formatDate';
 
 interface ListLayoutProps {
-  posts?: any[]
-  title: string
-  initialDisplayPosts?: any[]
-  pagination?: PaginationProps
+  posts?: any[];
+  title: string;
+  initialDisplayPosts?: any[];
+  pagination?: PaginationProps;
 }
 
 export default function ListLayout({
@@ -18,15 +18,15 @@ export default function ListLayout({
   initialDisplayPosts = [],
   pagination,
 }: ListLayoutProps) {
-  const [searchValue, setSearchValue] = useState('')
+  const [searchValue, setSearchValue] = useState('');
   const filteredBlogPosts = posts.filter((frontMatter) => {
-    const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
-    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
-  })
+    const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ');
+    return searchContent.toLowerCase().includes(searchValue.toLowerCase());
+  });
 
   // If initialDisplayPosts exist, display it if no searchValue is specified
   const displayPosts =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts
+    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredBlogPosts;
 
   return (
     <>
@@ -62,7 +62,7 @@ export default function ListLayout({
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
           {displayPosts.map((post) => {
-            const { slug, date, title, summary, tags } = post
+            const { slug, date, title, summary, tags } = post;
             return (
               <li key={slug} className="py-4">
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
@@ -91,7 +91,7 @@ export default function ListLayout({
                   </div>
                 </article>
               </li>
-            )
+            );
           })}
         </ul>
       </div>
@@ -99,5 +99,5 @@ export default function ListLayout({
         <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
       )}
     </>
-  )
+  );
 }
