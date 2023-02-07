@@ -12,10 +12,10 @@ export default function Tracks() {
   }
 
   return (
-    <>
+    <div className="flex flex-col space-y-2">
       {data.tracks.map((track, index) => (
         <Track ranking={index + 1} key={`track-${index + 1}`} {...track} />
       ))}
-    </>
+    </div>
   );
 }

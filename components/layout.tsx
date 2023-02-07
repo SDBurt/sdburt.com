@@ -1,11 +1,11 @@
 import React from 'react';
-import Nav from '@/components/nav';
+import TopNav from '@/components/mainNav';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mx-auto mt-20 mb-auto max-w-lg antialiased">
-      <Nav />
-      <div className="prose prose-neutral">{children}</div>
+    <div className="mx-auto mt-2 mb-auto max-w-2xl p-6 antialiased sm:mt-10 sm:p-2">
+      <TopNav />
+      <div className="mt-10">{children}</div>
     </div>
   );
 }

@@ -1,21 +1,30 @@
-import Head from 'next/head';
-
-import '@/css/tailwind.css';
+import type { AppProps } from 'next/app';
+import { Inter as FontSans } from '@next/font/google';
+import { ThemeProvider } from 'next-themes';
 
 import Analytics from '@/components/analytics';
-
 import Layout from '@/components/layout';
 
-export default function App({ Component, pageProps }) {
+import '@/styles/globals.css';
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-      </Head>
-      <Layout>
+      <style jsx global>{`
+				:root {
+					--font-sans: ${fontSans.style.fontFamily};
+				}
+			}`}</style>
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
         <Component {...pageProps} />
-      </Layout>
-      <Analytics />
+        <Analytics />
+      </ThemeProvider>
     </>
   );
 }
