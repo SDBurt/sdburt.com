@@ -21,7 +21,6 @@ export default function ViewCounter({ slug, trackView }: { slug: string; trackVi
 
   useEffect(() => {
     const registerView = () => {
-      console.log('register called', slug);
       fetch(`/api/views/${slug}`, {
         method: 'POST',
       });
