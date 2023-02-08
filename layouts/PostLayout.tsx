@@ -1,7 +1,6 @@
 import Link from '@/components/Link';
 import PageTitle from '@/components/PageTitle';
 import SectionContainer from '@/components/SectionContainer';
-import { BlogSEO } from '@/components/SEO';
 import Image from '@/components/Image';
 import Tag from '@/components/Tag';
 import { siteMetadata } from '@/data/siteMetadata';
@@ -40,7 +39,7 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
             <div className="mt-4 mb-8 grid grid-cols-[auto_1fr_auto] items-center text-sm">
               <div className="rounded-md py-1" />
               <div className="dark:gray-700 mx-2 h-px bg-gray-200" />
-              <ViewCounter slug={slug} trackView />
+              <ViewCounter slug={slug} trackView={true} />
             </div>
           </header>
           <div

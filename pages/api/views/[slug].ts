@@ -4,18 +4,17 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const slug = req.query.slug.toString();
-    console.log(slug);
+
     const data = await queryBuilder
       .selectFrom('views')
       .where('slug', '=', slug)
       .select(['count'])
       .execute();
 
-    if (!data.length) {
-      return 0;
+    let views = Number(0);
+    if (data.length > 0) {
+      views = Number(data[0].count);
     }
-
-    const views = Number(data[0].count);
 
     if (req.method === 'POST') {
       await queryBuilder
@@ -23,6 +22,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         .values({ slug, count: 1 })
         .onDuplicateKeyUpdate({ count: views + 1 })
         .execute();
+
+      console.log('success');
 
       return res.status(200).json({
         total: views + 1,

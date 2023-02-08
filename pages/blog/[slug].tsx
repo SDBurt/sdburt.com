@@ -9,7 +9,7 @@ import { Mdx } from '@/components/mdx';
 import PostLayout from '@/layouts/PostLayout';
 
 export async function getStaticPaths() {
-  const paths = allBlogs.map((post) => post.slug);
+  const paths = allBlogs.map((post) => `/blog/${post.slug}`);
   return {
     paths,
     fallback: false,
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postIndex = allBlogs.findIndex((post) => post._raw.flattenedPath === params.slug);
+  const postIndex = allBlogs.findIndex((post) => post.slug === params.slug);
   const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug);
   const next = allBlogs[postIndex - 1] || null;
   const prev = allBlogs[postIndex + 1] || null;
