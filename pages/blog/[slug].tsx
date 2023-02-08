@@ -1,6 +1,7 @@
 import lodash from 'lodash';
 import PageTitle from '@/components/PageTitle';
 
+import { notFound } from 'next/navigation';
 import { authors } from '@/data/authors/default';
 
 import { allBlogs } from 'contentlayer/generated';
@@ -20,7 +21,7 @@ export async function getStaticProps({ params }) {
   const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug);
   const next = allBlogs[postIndex - 1] || null;
   const prev = allBlogs[postIndex + 1] || null;
-  // console.log(post)
+
   const authorList = lodash.get(post, 'authors', ['default']);
 
   const authorDetails = authorList.map((author) => {
@@ -38,6 +39,10 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Blog({ post, authorDetails, next, prev }) {
+  if (!post) {
+    notFound();
+  }
+
   return (
     <>
       {post.draft !== true ? (

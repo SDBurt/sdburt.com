@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Pagination from '@/components/Pagination';
 import type { PaginationProps } from '@/components/Pagination';
 import formatDate from '@/lib/formatDate';
+import ViewCounter from '@/components/view-counter';
 
 interface ListLayoutProps {
   posts?: any[];
@@ -35,6 +36,7 @@ export default function ListLayout({
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
+
           <div className="relative max-w-lg">
             <input
               aria-label="Search articles"
@@ -78,6 +80,9 @@ export default function ListLayout({
                         <Link href={slug} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>
+                        <div className="py-2">
+                          <ViewCounter slug={slug} trackView={false} />
+                        </div>
                       </h3>
                       <div className="flex flex-wrap">
                         {tags.map((tag) => (
