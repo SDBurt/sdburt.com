@@ -80,9 +80,9 @@ export default function ListLayout({
                         <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>
-                        <div className="py-2">
+                        {/* <div className="py-2">
                           <ViewCounter slug={slug} trackView={false} />
-                        </div>
+                        </div> */}
                       </h3>
                       <div className="flex flex-wrap">
                         {tags.map((tag) => (
