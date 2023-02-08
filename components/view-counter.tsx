@@ -15,8 +15,6 @@ async function fetcher<JSON = any>(input, init): Promise<JSON> {
 
 export default function ViewCounter({ slug, trackView }: { slug: string; trackView: boolean }) {
   const [viewed, setViewed] = useState(false);
-  const [loading, setLoading] = useState(true);
-
   const { data } = useSWR<PostView[]>('/api/views', fetcher);
 
   const viewsForSlug = data && data.find((view) => view.slug === slug);
@@ -27,19 +25,18 @@ export default function ViewCounter({ slug, trackView }: { slug: string; trackVi
       console.log('register called', slug);
       fetch(`/api/views/${slug}`, {
         method: 'POST',
-      }).then(() => setLoading(false));
+      });
     };
 
     if (slug && trackView && viewed === false) {
       registerView();
       setViewed(true);
     }
-  }, []);
+  }, [slug, trackView, viewed]);
 
   return (
     <p className="text-sm font-semibold tracking-tighter text-gray-500 dark:text-gray-400">
-      {data && loading && '​loading!'}
-      {data && !loading ? `${views.toLocaleString()} views` : '​'}
+      {data ? `${views.toLocaleString()} views` : '​'}
     </p>
   );
 }
