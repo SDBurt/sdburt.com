@@ -14,7 +14,6 @@ async function fetcher<JSON = any>(input, init): Promise<JSON> {
 }
 
 export default function ViewCounter({ slug, trackView }: { slug: string; trackView: boolean }) {
-  const [viewed, setViewed] = useState(false);
   const { data } = useSWR<PostView[]>('/api/views', fetcher);
 
   const viewsForSlug = data && data.find((view) => view.slug === slug);
@@ -28,11 +27,10 @@ export default function ViewCounter({ slug, trackView }: { slug: string; trackVi
       });
     };
 
-    if (slug && trackView && viewed === false) {
+    if (slug && trackView && process.env.NODE_ENV !== 'development') {
       registerView();
-      setViewed(true);
     }
-  }, [slug, trackView, viewed]);
+  }, [slug, trackView]);
 
   return (
     <p className="text-sm font-semibold tracking-tighter text-gray-500 dark:text-gray-400">
