@@ -1,11 +1,11 @@
 import Link from '@/components/Link';
 import PageTitle from '@/components/PageTitle';
 import SectionContainer from '@/components/SectionContainer';
-import { BlogSEO } from '@/components/SEO';
 import Image from '@/components/Image';
 import Tag from '@/components/Tag';
 import { siteMetadata } from '@/data/siteMetadata';
 import ScrollTopAndComment from '@/components/ScrollTopAndComment';
+import ViewCounter from '@/components/view-counter';
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -17,15 +17,9 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 export default function PostLayout({ authors, slug, date, title, tags, children, next, prev }) {
   return (
     <SectionContainer>
-      {/* <BlogSEO
-        url={`${siteMetadata.siteUrl}/blog/${slug}`}
-        authorDetails={author}
-        title={title}
-        date={date}
-      /> */}
       <ScrollTopAndComment />
       <article>
-        <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
+        <div>
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1 text-center">
               <dl className="space-y-10">
@@ -41,6 +35,11 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
               <div>
                 <PageTitle>{title}</PageTitle>
               </div>
+            </div>
+            <div className="mt-4 mb-8 grid grid-cols-[auto_1fr_auto] items-center text-sm">
+              <div className="rounded-md py-1" />
+              <div className="dark:gray-700 mx-2 h-px bg-gray-200" />
+              <ViewCounter slug={slug} trackView={true} />
             </div>
           </header>
           <div
@@ -83,6 +82,7 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
                 </ul>
               </dd>
             </dl>
+
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
             </div>

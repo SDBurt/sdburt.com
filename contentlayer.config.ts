@@ -12,7 +12,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 const computedFields: ComputedFields = {
   slug: {
     type: 'string',
-    resolve: (doc) => `/blog/${doc._raw.flattenedPath}`,
+    resolve: (doc) => doc._raw.flattenedPath,
   },
 };
 
