@@ -20,11 +20,11 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 function NavItem({ href, text }) {
-  const router = useRouter();
-  const isActive = router.asPath === href;
+  const path = usePathname();
+  const isActive = path === href;
 
   return (
     <NavigationMenuItem>

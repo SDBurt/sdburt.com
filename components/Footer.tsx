@@ -4,17 +4,6 @@ import { Separator } from './ui/separator';
 import Icons from './icons';
 import Link from 'next/link';
 
-const ExternalLink = ({ href, children }) => (
-  <a
-    className="text-gray-500 transition hover:text-gray-600"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
-
 export default function Footer() {
   return (
     <footer>

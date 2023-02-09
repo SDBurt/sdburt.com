@@ -1,4 +1,4 @@
-import '@/css/tailwind.css';
+import '@/app/tailwind.css';
 import '@fontsource/inter/variable-full.css';
 
 import { ThemeProvider } from 'next-themes';

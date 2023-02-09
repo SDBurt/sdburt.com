@@ -4,7 +4,7 @@ import SectionContainer from '@/components/SectionContainer';
 import Image from '@/components/Image';
 import Tag from '@/components/Tag';
 import { siteMetadata } from '@/data/siteMetadata';
-import ScrollTopAndComment from '@/components/ScrollTopAndComment';
+import ScrollTop from '@/components/ScrollTop';
 import ViewCounter from '@/components/view-counter';
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
@@ -17,36 +17,38 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 export default function PostLayout({ authors, slug, date, title, tags, children, next, prev }) {
   return (
     <SectionContainer>
-      <ScrollTopAndComment />
+      <ScrollTop />
       <article>
         <div>
-          <header className="pt-6 xl:pb-6">
-            <div className="space-y-1 text-center">
-              <dl className="space-y-10">
+          <header className="pt-6 xl:pb-3">
+            <div className="flex flex-col-reverse sm:flex-col">
+              <div className="space-y-1 text-center">
+                <dl className="space-y-6">
+                  <div>
+                    <dt className="sr-only">Published on</dt>
+                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime={date}>
+                        {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                      </time>
+                    </dd>
+                  </div>
+                </dl>
                 <div>
-                  <dt className="sr-only">Published on</dt>
-                  <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>
-                      {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
-                    </time>
-                  </dd>
+                  <PageTitle>{title}</PageTitle>
                 </div>
-              </dl>
-              <div>
-                <PageTitle>{title}</PageTitle>
               </div>
-            </div>
-            <div className="mt-4 mb-8 grid grid-cols-[auto_1fr_auto] items-center text-sm">
-              <div className="rounded-md py-1" />
-              <div className="dark:gray-700 mx-2 h-px bg-gray-200" />
-              <ViewCounter slug={slug} trackView={true} />
+              <div className="mt-2 mb-2 grid grid-cols-[auto_1fr_auto] items-center text-sm">
+                <div className="rounded-md py-1" />
+                <div className="mx-2 h-px bg-gray-200 dark:bg-gray-700" />
+                <ViewCounter slug={slug} trackView={true} />
+              </div>
             </div>
           </header>
           <div
             className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
-            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
+            <dl className="pt-3 pb-6 xl:border-b xl:border-gray-200 xl:pt-6 xl:dark:border-gray-700">
               <dt className="sr-only">Author</dt>
               <dd>
                 <ul className="flex justify-center space-x-8 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
@@ -84,7 +86,7 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
             </dl>
 
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-10 pb-8 dark:prose-dark">{children}</div>
+              <div className="prose max-w-none pt-3 pb-3 dark:prose-dark">{children}</div>
             </div>
             <footer>
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">

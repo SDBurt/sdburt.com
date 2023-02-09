@@ -6,13 +6,14 @@ module.exports = {
     optimizeUniversalDefaults: true,
   },
   content: [
+    './app/**/*.{js,ts,tsx}',
     './pages/**/*.{js,ts,tsx}',
     './components/**/*.{js,ts,tsx}',
     './layouts/**/*.{js,ts,tsx}',
     './lib/**/*.{js,ts,tsx}',
-    './data/**/*.mdx',
+    './content/**/*.mdx',
   ],
-  darkMode: 'class',
+  darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
       spacing: {

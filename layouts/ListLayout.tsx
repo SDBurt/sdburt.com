@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Pagination from '@/components/Pagination';
 import type { PaginationProps } from '@/components/Pagination';
 import formatDate from '@/lib/formatDate';
-import ViewCounter from '@/components/view-counter';
 
 interface ListLayoutProps {
   posts?: any[];

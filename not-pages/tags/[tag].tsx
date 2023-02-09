@@ -6,8 +6,6 @@ import kebabCase from '@/lib/kebabCase';
 
 import { allBlogs } from '@/.contentlayer/generated/index.mjs';
 
-const root = process.cwd();
-
 export async function getStaticPaths() {
   const tags = getAllTags(allBlogs);
 
@@ -25,11 +23,6 @@ export async function getStaticProps({ params }) {
   const filteredPosts = allBlogs.filter(
     (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
   );
-
-  // const allPosts = await getAllFilesFrontMatter('blog')
-  // const filteredPosts = allPosts.filter(
-  //   (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
-  // )
 
   return { props: { posts: filteredPosts, tag: params.tag } };
 }
