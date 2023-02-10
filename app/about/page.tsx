@@ -11,7 +11,7 @@ export const metadata = {
   description: 'VP of Developer Experience at Vercel.',
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
   const { name, avatar, occupation, company, email, twitter, linkedin, github, bio } = sean;
 
   return (

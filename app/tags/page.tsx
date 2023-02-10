@@ -5,7 +5,7 @@ import kebabCase from '@/lib/kebabCase';
 import { allBlogs } from '@/.contentlayer/generated';
 import { getAllTags } from '@/lib/tags';
 
-export default function Tags() {
+export default async function TagsPage() {
   const tags = getAllTags(allBlogs);
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a]);
   return (

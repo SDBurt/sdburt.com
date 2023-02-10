@@ -1,3 +1,5 @@
+'use client';
+
 import { siteMetadata } from '@/data/siteMetadata';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 

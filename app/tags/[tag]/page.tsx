@@ -12,19 +12,19 @@ export async function generateStaticParams() {
   return Object.keys(tags).map((tag) => ({ tag }));
 }
 
-export default function TagPage({ params }) {
+export default async function TagPage({ params }) {
   const filteredBlogs = allBlogs.filter(
     (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
   );
 
   // Capitalize first letter and convert space to dash
-  // const title = tag[0].toUpperCase() + tag.split(' ').join('-').slice(1);
+  const title = params.tag[0].toUpperCase() + params.tag.split(' ').join('-').slice(1);
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Tag: {params.tag}
+            Tag: {title}
           </h1>
         </div>
         <ul>

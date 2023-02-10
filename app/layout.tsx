@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Analytics from '../components/analytics';
+import Analytics from '@/components/analytics';
 import { ThemeProvider } from '@/components/theme-provider';
-import LayoutWrapper from '@/components/LayoutWrapper';
+import RootLayout from '@/layouts/RootLayout';
 
 import '@/css/tailwind.css';
 import '@fontsource/inter/variable-full.css';
@@ -36,16 +36,15 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function Layout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main className="mt-6 flex min-w-0 flex-auto flex-col px-2 md:mt-0 md:px-0">
-            <LayoutWrapper>{children}</LayoutWrapper>
+            <RootLayout>{children}</RootLayout>
+            <Analytics />
           </main>
-
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>

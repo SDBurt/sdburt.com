@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Blog({ params }) {
+export default async function Blog({ params }) {
   const postIndex = allBlogs.findIndex((post) => post.slug === params.slug);
   const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug);
   const next = allBlogs[postIndex - 1] || null;

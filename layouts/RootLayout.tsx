@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 import { siteMetadata } from '@/data/siteMetadata';
 import headerNavLinks from '@/data/headerNavLinks';
-import SectionContainer from '@/components/SectionContainer';
 import Footer from '@/components/Footer';
 import MobileNav from '@/components/MobileNav';
 import ThemeSwitch from '@/components/ThemeSwitch';
@@ -43,10 +42,10 @@ function NavItem({ href, text }) {
   );
 }
 
-const LayoutWrapper = ({ children }) => {
+const RootLayout = ({ children }) => {
   return (
     <>
-      <SectionContainer>
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
         <div className="flex h-screen flex-col justify-between">
           <header className="flex items-center justify-between py-10">
             <div>
@@ -63,7 +62,6 @@ const LayoutWrapper = ({ children }) => {
               </Link>
             </div>
             <div className="flex items-center text-base leading-5">
-              {/* shadcn's nav */}
               <NavigationMenu>
                 <NavigationMenuList className="space-x-1">
                   {headerNavLinks.map((link) => (
@@ -78,9 +76,9 @@ const LayoutWrapper = ({ children }) => {
           <main className="mb-auto">{children}</main>
           <Footer />
         </div>
-      </SectionContainer>
+      </div>
     </>
   );
 };
 
-export default LayoutWrapper;
+export default RootLayout;
