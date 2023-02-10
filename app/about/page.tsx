@@ -1,17 +1,21 @@
-import TopTracks from '@/components/spotify/TopTracks';
-import { PageSEO } from '@/components/SEO';
-import { sean } from '@/data/authors/default';
-
 import Image from 'next/image';
 import Link from 'next/link';
+
+import TopTracks from '@/components/spotify/TopTracks';
+import { sean } from '@/data/authors/default';
+
 import Icons from '@/components/icons';
 
-export default function About() {
-  const { name, avatar, occupation, company, email, twitter, kaggle, linkedin, github, bio } = sean;
+export const metadata = {
+  title: 'About',
+  description: 'VP of Developer Experience at Vercel.',
+};
+
+export default async function AboutPage() {
+  const { name, avatar, occupation, company, email, twitter, linkedin, github, bio } = sean;
 
   return (
-    <>
-      <PageSEO title={`About - ${name}`} description={`About me - ${name}`} />
+    <section>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
@@ -31,12 +35,6 @@ export default function About() {
             <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
             <div className="text-gray-500 dark:text-gray-400">{company}</div>
             <div className="flex space-x-3 pt-6">
-              {/* <SocialIcon kind="mail" size={6} href={`mailto:${email}`} />
-              <SocialIcon kind="github" size={6} href={github} />
-              <SocialIcon kind="kaggle" size={6} href={kaggle} />
-              <SocialIcon kind="linkedin" size={6} href={linkedin} />
-              <SocialIcon kind="twitter" size={6} href={twitter} /> */}
-
               <Link href={`mailto:${email}`} className={'hover:text-primary-500'}>
                 <Icons.mail size={20} />
               </Link>
@@ -65,6 +63,6 @@ export default function About() {
           <TopTracks />
         </div>
       </div>
-    </>
+    </section>
   );
 }

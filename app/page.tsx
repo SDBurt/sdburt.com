@@ -1,30 +1,41 @@
 import Link from '@/components/Link';
-import { PageSEO } from '@/components/SEO';
 import Tag from '@/components/Tag';
-import { siteMetadata } from '@/data/siteMetadata';
-// import { getAllFilesFrontMatter } from '@/lib/mdx'
+
 import formatDate from '@/lib/formatDate';
 import projectsData from '@/data/projectsData';
 
-import { compareDesc, format, parseISO } from 'date-fns';
+import { compareDesc } from 'date-fns';
 import { allBlogs } from 'contentlayer/generated';
 
 const MAX_DISPLAY = 5;
 
-export async function getStaticProps() {
-  // const posts = await getAllFilesFrontMatter('blog')
+export const revalidate = 60;
+export const metadata = {
+  description: 'Developer, writer, and creator.',
+  openGraph: {
+    title: 'Sean Burt',
+    description: 'Developer, writer, and creator.',
+    url: 'https://sdburt.com',
+    siteName: 'Lee Robinson',
+    images: [
+      {
+        url: 'https://sdburt.com/og.jpg',
+        width: 1920,
+        height: 1080,
+      },
+    ],
+    locale: 'en-US',
+    type: 'website',
+  },
+};
 
+export default async function HomePage() {
   const posts = allBlogs.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date));
   });
 
-  return { props: { posts, projects: projectsData } };
-}
-
-export default function Home({ posts, projects }) {
   return (
     <>
-      <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <div className=" divide-y divide-gray-500 dark:divide-gray-400">
         {/* Header */}
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
@@ -45,8 +56,8 @@ export default function Home({ posts, projects }) {
             Featured Projects
           </h2>
           <ul>
-            {!projects.length && 'No posts found.'}
-            {projects.slice(0, MAX_DISPLAY).map((frontMatter) => {
+            {!projectsData.length && 'No posts found.'}
+            {projectsData.slice(0, MAX_DISPLAY).map((frontMatter) => {
               const { title, description, href } = frontMatter;
               return (
                 <li key={`project-${href}`} className="py-8">

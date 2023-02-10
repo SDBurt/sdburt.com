@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import useSWR from 'swr';
 
 type PostView = {
@@ -15,16 +15,14 @@ async function fetcher<JSON = any>(input, init): Promise<JSON> {
 
 export default function ViewCounter({ slug, trackView }: { slug: string; trackView: boolean }) {
   const { data } = useSWR<PostView[]>('/api/views', fetcher);
-
   const viewsForSlug = data && data.find((view) => view.slug === slug);
   const views = new Number(viewsForSlug?.count || 0);
 
   useEffect(() => {
-    const registerView = () => {
+    const registerView = () =>
       fetch(`/api/views/${slug}`, {
         method: 'POST',
       });
-    };
 
     if (slug && trackView && process.env.NODE_ENV !== 'development') {
       registerView();

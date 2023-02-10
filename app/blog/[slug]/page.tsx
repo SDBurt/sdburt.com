@@ -8,15 +8,13 @@ import { allBlogs } from 'contentlayer/generated';
 import { Mdx } from '@/components/mdx';
 import PostLayout from '@/layouts/PostLayout';
 
-export async function getStaticPaths() {
-  const paths = allBlogs.map((post) => `/blog/${post.slug}`);
-  return {
-    paths,
-    fallback: false,
-  };
+export async function generateStaticParams() {
+  return allBlogs.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
-export async function getStaticProps({ params }) {
+export default async function Blog({ params }) {
   const postIndex = allBlogs.findIndex((post) => post.slug === params.slug);
   const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug);
   const next = allBlogs[postIndex - 1] || null;
@@ -28,17 +26,6 @@ export async function getStaticProps({ params }) {
     return lodash.get(authors, author);
   });
 
-  return {
-    props: {
-      post,
-      authorDetails,
-      prev,
-      next,
-    },
-  };
-}
-
-export default function Blog({ post, authorDetails, next, prev }) {
   if (!post) {
     notFound();
   }
