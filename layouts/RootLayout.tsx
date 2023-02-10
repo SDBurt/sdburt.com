@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/navigation-menu';
 
 import { usePathname } from 'next/navigation';
+import Navbar from '@/components/Navbar';
 
 function NavItem({ href, text }) {
   const path = usePathname();
@@ -45,14 +46,14 @@ function NavItem({ href, text }) {
 const RootLayout = ({ children }) => {
   return (
     <>
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <div className="flex h-screen flex-col justify-between">
-          <header className="flex items-center justify-between py-10">
+          <header className="flex items-center justify-between py-2 md:py-10 ">
             <div>
               <Link href="/" aria-label={siteMetadata.headerTitle}>
                 <div className="flex items-center justify-between">
                   {typeof siteMetadata.headerTitle === 'string' ? (
-                    <div className="hidden h-6 text-2xl font-semibold sm:block">
+                    <div className="hidden h-6 text-2xl font-bold sm:flex sm:items-center">
                       {siteMetadata.headerTitle}
                     </div>
                   ) : (
@@ -62,15 +63,16 @@ const RootLayout = ({ children }) => {
               </Link>
             </div>
             <div className="flex items-center text-base leading-5">
-              <NavigationMenu>
+              {/* <NavigationMenu>
                 <NavigationMenuList className="space-x-1">
                   {headerNavLinks.map((link) => (
                     <NavItem key={link.href} text={link.title} href={link.href} />
                   ))}
                 </NavigationMenuList>
-              </NavigationMenu>
-              <ThemeSwitch />
-              <MobileNav />
+              </NavigationMenu> */}
+              <Navbar />
+              {/* <ThemeSwitch />
+              <MobileNav /> */}
             </div>
           </header>
           <main className="mb-auto">{children}</main>

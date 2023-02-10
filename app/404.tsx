@@ -1,6 +1,6 @@
 import Link from '@/components/Link';
 
-export default function FourZeroFour() {
+export default async function FourZeroFour() {
   return (
     <>
       <div className="flex flex-col items-start justify-start md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6">
