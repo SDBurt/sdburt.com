@@ -8,7 +8,7 @@ import Icons from '@/components/icons';
 
 export const metadata = {
   title: 'About',
-  description: 'VP of Developer Experience at Vercel.',
+  description: 'Software Engineer',
 };
 
 export default async function AboutPage() {
@@ -49,7 +49,7 @@ export default async function AboutPage() {
               </Link>
             </div>
           </div>
-          <div className="prose max-w-none pt-8 pb-8 dark:prose-dark xl:col-span-2">{bio}</div>
+          <div className="prose pt-8 pb-8 dark:prose-dark xl:col-span-2">{bio}</div>
         </div>
       </div>
       <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">

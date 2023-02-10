@@ -45,7 +45,7 @@ const Navbar = () => {
     <>
       <div className="flex items-center text-base leading-5">
         {/* shadcn's nav */}
-        <NavigationMenu>
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="space-x-1">
             {headerNavLinks.map((link) => (
               <NavItem key={link.href} text={link.title} href={link.href} />
