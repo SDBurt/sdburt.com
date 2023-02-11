@@ -1,6 +1,5 @@
 import Link from '@/components/Link';
 import PageTitle from '@/components/PageTitle';
-import SectionContainer from '@/components/SectionContainer';
 import Image from '@/components/Image';
 import Tag from '@/components/Tag';
 import { siteMetadata } from '@/data/siteMetadata';
@@ -16,7 +15,7 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 
 export default function PostLayout({ authors, slug, date, title, tags, children, next, prev }) {
   return (
-    <SectionContainer>
+    <>
       <ScrollTop />
       <article>
         <div>
@@ -139,6 +138,6 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
           </div>
         </div>
       </article>
-    </SectionContainer>
+    </>
   );
 }

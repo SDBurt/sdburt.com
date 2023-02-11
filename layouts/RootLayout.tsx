@@ -62,18 +62,9 @@ const RootLayout = ({ children }) => {
                 </div>
               </Link>
             </div>
-            <div className="flex items-center text-base leading-5">
-              {/* <NavigationMenu>
-                <NavigationMenuList className="space-x-1">
-                  {headerNavLinks.map((link) => (
-                    <NavItem key={link.href} text={link.title} href={link.href} />
-                  ))}
-                </NavigationMenuList>
-              </NavigationMenu> */}
-              <Navbar />
-              {/* <ThemeSwitch />
-              <MobileNav /> */}
-            </div>
+            {/* <div className="flex items-center text-base leading-5"> */}
+            <Navbar />
+            {/* </div> */}
           </header>
           <main className="mb-auto">{children}</main>
           <Footer />
