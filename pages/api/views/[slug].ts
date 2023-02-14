@@ -11,10 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .select(['count'])
       .execute();
 
-    let views = Number(0);
-    if (data.length > 0) {
-      views = Number(data[0].count);
-    }
+    const views = !data.length ? 0 : Number(data[0].count);
 
     if (req.method === 'POST') {
       await queryBuilder
@@ -28,9 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(200).json({
         total: views + 1,
       });
-    }
-
-    if (req.method === 'GET') {
+    } else if (req.method === 'GET') {
       return res.status(200).json({ total: views });
     }
   } catch (e) {
