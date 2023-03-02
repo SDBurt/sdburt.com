@@ -1,13 +1,10 @@
 // contentlayer.config.js
 
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-
-import type { ComputedFields } from 'contentlayer/source-files';
-
-import remarkGfm from 'remark-gfm';
+import { defineDocumentType, makeSource, type ComputedFields } from 'contentlayer/source-files';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import remarkGfm from 'remark-gfm';
 
 const computedFields: ComputedFields = {
   slug: {

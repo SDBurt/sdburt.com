@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
-import TopTracks from '@/components/spotify/TopTracks';
 import { sean } from '@/data/authors/default';
 
 import Icons from '@/components/icons';
+import TopTracks from '@/components/spotify/TopTracks';
 
 export const metadata = {
   title: 'About',

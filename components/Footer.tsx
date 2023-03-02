@@ -1,8 +1,9 @@
-import { siteMetadata } from '@/data/siteMetadata';
-import NowPlaying from '@/components/spotify/NowPlaying';
-import { Separator } from './ui/separator';
-import Icons from './icons';
 import Link from 'next/link';
+import { siteMetadata } from '@/data/siteMetadata';
+
+import NowPlaying from '@/components/spotify/NowPlaying';
+import Icons from './icons';
+import { Separator } from './ui/separator';
 
 export default function Footer() {
   return (

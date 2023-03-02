@@ -1,12 +1,11 @@
-import lodash from 'lodash';
-import PageTitle from '@/components/PageTitle';
-
 import { notFound } from 'next/navigation';
 import { authors } from '@/data/authors/default';
-
-import { allBlogs } from 'contentlayer/generated';
-import { Mdx } from '@/components/mdx';
 import PostLayout from '@/layouts/PostLayout';
+import { allBlogs } from 'contentlayer/generated';
+import lodash from 'lodash';
+
+import PageTitle from '@/components/PageTitle';
+import { Mdx } from '@/components/mdx';
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({

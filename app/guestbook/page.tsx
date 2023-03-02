@@ -1,8 +1,12 @@
+import { SignIn, SignOut } from '@/app/guestbook/actions';
+import Form from '@/app/guestbook/form';
 import { queryBuilder } from 'lib/planetscale';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from 'pages/api/auth/[...nextauth]';
-import { SignIn, SignOut } from '@/app/guestbook/actions';
-import Form from '@/app/guestbook/form';
+
+import { Database } from '@/lib/planetscale';
+
+type Guestbook = Database['guestbook'] & { id: number };
 
 async function getGuestbook() {
   const data = await queryBuilder
@@ -23,7 +27,7 @@ export const metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function GuestbookPage() {
-  let entries = [];
+  let entries: unknown[] = [];
   let session;
 
   try {
@@ -65,7 +69,7 @@ export default async function GuestbookPage() {
         )}
       </div>
       <ul>
-        {entries.map((item) => {
+        {entries.map((item: Guestbook) => {
           return (
             <li key={item.id} className="flex flex-row space-x-1 py-2">
               <p>

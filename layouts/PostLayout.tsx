@@ -1,9 +1,10 @@
+import { siteMetadata } from '@/data/siteMetadata';
+
+import Image from '@/components/Image';
 import Link from '@/components/Link';
 import PageTitle from '@/components/PageTitle';
-import Image from '@/components/Image';
-import Tag from '@/components/Tag';
-import { siteMetadata } from '@/data/siteMetadata';
 import ScrollTop from '@/components/ScrollTop';
+import Tag from '@/components/Tag';
 import ViewCounter from '@/components/view-counter';
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {

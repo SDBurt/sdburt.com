@@ -2,15 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
-
-import { siteMetadata } from '@/data/siteMetadata';
+import { usePathname } from 'next/navigation';
 import headerNavLinks from '@/data/headerNavLinks';
-import Footer from '@/components/Footer';
-import MobileNav from '@/components/MobileNav';
-import ThemeSwitch from '@/components/ThemeSwitch';
+import { siteMetadata } from '@/data/siteMetadata';
 
 import { cn } from '@/lib/utils';
-
+import Footer from '@/components/Footer';
+import MobileNav from '@/components/MobileNav';
+import Navbar from '@/components/Navbar';
+import ThemeSwitch from '@/components/ThemeSwitch';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -18,9 +18,6 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-
-import { usePathname } from 'next/navigation';
-import Navbar from '@/components/Navbar';
 
 function NavItem({ href, text }) {
   const path = usePathname();

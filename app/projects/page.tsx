@@ -1,4 +1,5 @@
 import projectsData from '@/data/projectsData';
+
 import Card from '@/components/Card';
 
 export const metadata = {

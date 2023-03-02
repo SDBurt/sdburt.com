@@ -1,9 +1,9 @@
+import { allBlogs } from '@/.contentlayer/generated';
+
+import kebabCase from '@/lib/kebabCase';
+import { getAllTags } from '@/lib/tags';
 import Link from '@/components/Link';
 import Tag from '@/components/Tag';
-import kebabCase from '@/lib/kebabCase';
-
-import { allBlogs } from '@/.contentlayer/generated';
-import { getAllTags } from '@/lib/tags';
 
 export default async function TagsPage() {
   const tags = getAllTags(allBlogs);

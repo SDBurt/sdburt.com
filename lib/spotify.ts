@@ -9,16 +9,18 @@ const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?limit=10`;
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const getAccessToken = async () => {
+  const params: Record<string, string> = {
+    grant_type: 'refresh_token',
+    refresh_token: refresh_token ?? '',
+  };
+
   const response = await fetch(TOKEN_ENDPOINT, {
     method: 'POST',
     headers: {
       Authorization: `Basic ${basic}`,
       'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: new URLSearchParams({
-      grant_type: 'refresh_token',
-      refresh_token,
-    }),
+    body: new URLSearchParams(params),
   });
 
   return response.json();

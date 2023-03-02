@@ -1,11 +1,10 @@
+import { allBlogs } from '@/.contentlayer/generated/index.mjs';
+
+import formatDate from '@/lib/formatDate';
+import kebabCase from '@/lib/kebabCase';
+import { getAllTags } from '@/lib/tags';
 import Link from '@/components/Link';
 import Tag from '@/components/Tag';
-import formatDate from '@/lib/formatDate';
-
-import { getAllTags } from '@/lib/tags';
-import kebabCase from '@/lib/kebabCase';
-
-import { allBlogs } from '@/.contentlayer/generated/index.mjs';
 
 export async function generateStaticParams() {
   const tags = getAllTags(allBlogs);

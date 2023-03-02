@@ -1,9 +1,8 @@
 import React from 'react';
+import RootLayout from '@/layouts/RootLayout';
 
 import Analytics from '@/components/analytics';
 import { ThemeProvider } from '@/components/theme-provider';
-import RootLayout from '@/layouts/RootLayout';
-
 import '@/css/tailwind.css';
 import '@fontsource/inter/variable-full.css';
 

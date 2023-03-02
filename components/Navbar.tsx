@@ -2,13 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
-
+import { usePathname } from 'next/navigation';
 import headerNavLinks from '@/data/headerNavLinks';
-import MobileNav from '@/components/MobileNav';
-import ThemeSwitch from '@/components/ThemeSwitch';
 
 import { cn } from '@/lib/utils';
-
+import MobileNav from '@/components/MobileNav';
+import ThemeSwitch from '@/components/ThemeSwitch';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -16,8 +15,6 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
-
-import { usePathname } from 'next/navigation';
 
 function NavItem({ href, text }) {
   const path = usePathname();

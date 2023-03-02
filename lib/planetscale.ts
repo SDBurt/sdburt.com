@@ -16,7 +16,7 @@ interface ViewsTable {
   count: number;
 }
 
-interface Database {
+export interface Database {
   guestbook: GuestbookTable;
   views: ViewsTable;
 }

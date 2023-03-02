@@ -1,9 +1,9 @@
 'use client';
 
-import useSWR from 'swr';
-
 import fetcher from 'lib/fetcher';
 import { TopTracks } from 'lib/types';
+import useSWR from 'swr';
+
 import Track from '@/components/spotify/track/Track';
 
 export default function Tracks() {
