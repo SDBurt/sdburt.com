@@ -1,4 +1,5 @@
 import { allBlogs } from '@/.contentlayer/generated';
+import { compareDesc } from 'date-fns';
 
 import formatDate from '@/lib/formatDate';
 import Link from '@/components/Link';
@@ -10,6 +11,10 @@ export const metadata = {
 };
 
 export default async function BlogPage() {
+  const posts = allBlogs.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date));
+  });
+
   return (
     <section>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -19,8 +24,8 @@ export default async function BlogPage() {
           </h1>
         </div>
         <ul>
-          {!allBlogs.length && 'No posts found.'}
-          {allBlogs.map((post) => {
+          {!posts.length && 'No posts found.'}
+          {posts.map((post) => {
             const { slug, date, title, summary, tags } = post;
             return (
               <li key={slug} className="py-4">
