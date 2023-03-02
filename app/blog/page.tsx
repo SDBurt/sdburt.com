@@ -1,8 +1,8 @@
+import { allBlogs } from '@/.contentlayer/generated';
+
+import formatDate from '@/lib/formatDate';
 import Link from '@/components/Link';
 import Tag from '@/components/Tag';
-import formatDate from '@/lib/formatDate';
-
-import { allBlogs } from '@/.contentlayer/generated';
 
 export const metadata = {
   title: 'Blog',
@@ -34,7 +34,10 @@ export default async function BlogPage() {
                   <div className="space-y-3 xl:col-span-3">
                     <div>
                       <h3 className="text-2xl font-bold leading-8 tracking-tight">
-                        <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
+                        <Link
+                          href={`/blog/${slug}`}
+                          className="text-left text-gray-900 dark:text-gray-100"
+                        >
                           {title}
                         </Link>
                       </h3>

@@ -1,11 +1,10 @@
-import Link from '@/components/Link';
-import Tag from '@/components/Tag';
+import projectsData from '@/data/projectsData';
+import { allBlogs } from 'contentlayer/generated';
+import { compareDesc } from 'date-fns';
 
 import formatDate from '@/lib/formatDate';
-import projectsData from '@/data/projectsData';
-
-import { compareDesc } from 'date-fns';
-import { allBlogs } from 'contentlayer/generated';
+import Link from '@/components/Link';
+import Tag from '@/components/Tag';
 
 const MAX_DISPLAY = 5;
 
@@ -16,7 +15,7 @@ export const metadata = {
     title: 'Sean Burt',
     description: 'Developer, writer, and creator.',
     url: 'https://sdburt.com',
-    siteName: 'Lee Robinson',
+    siteName: 'Sean D. Burt',
     images: [
       {
         url: 'https://sdburt.com/og.jpg',
@@ -122,7 +121,7 @@ export default async function HomePage() {
                             <h2 className="text-2xl font-bold leading-8 tracking-tight">
                               <Link
                                 href={`/blog/${slug}`}
-                                className="text-gray-900 dark:text-gray-100"
+                                className="text-gray-900 dark:text-gray-100 text-left"
                               >
                                 {title}
                               </Link>
