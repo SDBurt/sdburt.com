@@ -3,6 +3,10 @@ import { queryBuilder } from 'lib/planetscale';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
+    if (!req.query.slug) {
+      return res.status(500).json({ message: 'Slug is empty or does not exist' });
+    }
+
     const slug = req.query.slug.toString();
 
     const data = await queryBuilder
