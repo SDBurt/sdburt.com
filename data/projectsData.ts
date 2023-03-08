@@ -17,6 +17,12 @@ export const projectsData = [
     // imgSrc: '/static/images/google.png',
     href: 'https://refocus.vercel.app',
   },
+  {
+    title: 'NoteTaker',
+    description: `A note taking app built with T3 (NextJS, tRPC, Prisma, and Supabase)`,
+    // imgSrc: '/static/images/google.png',
+    href: 'https://notetaker-ecru.vercel.app',
+  },
 ];
 
 export default projectsData;
