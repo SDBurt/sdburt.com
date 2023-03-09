@@ -1,11 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/inter': 4.5.2
   '@ianvs/prettier-plugin-sort-imports': ^3.7.1
   '@mailchimp/mailchimp_marketing': ^3.0.80
   '@next/bundle-analyzer': ^12.3.4
-  '@next/font': ^13.1.6
   '@planetscale/database': ^1.5.0
   '@prisma/client': ^4.8.1
   '@radix-ui/react-avatar': ^1.0.1
@@ -83,10 +81,8 @@ specifiers:
   unist-util-visit: ^4.1.1
 
 dependencies:
-  '@fontsource/inter': 4.5.2
   '@mailchimp/mailchimp_marketing': 3.0.80
   '@next/bundle-analyzer': 12.3.4
-  '@next/font': 13.2.3
   '@planetscale/database': 1.5.0
   '@prisma/client': 4.11.0
   '@radix-ui/react-avatar': 1.0.1_biqbaboplfbrettd7655fr4n2y
@@ -1886,10 +1882,6 @@ packages:
       - '@types/react'
     dev: false
 
-  /@fontsource/inter/4.5.2:
-    resolution: {integrity: sha512-4LLfZYr5dRsobtC9JNkATL5OwOqrxs2tF29eNljjogxWXm4tlHxRo4dgOFTlWxQOxcj5Zv7dM8IMiSoOqMGy3g==}
-    dev: false
-
   /@grpc/grpc-js/1.8.11:
     resolution: {integrity: sha512-f/xC+6Z2QKsRJ+VSSFlt4hA5KSRm+PKvMWV8kMPkMgGlFidR6PeIkXrOasIY2roe+WROM6GFQLlgDKfeEZo2YQ==}
     engines: {node: ^8.13.0 || >=10.10.0}
@@ -2137,10 +2129,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/font/13.2.3:
-    resolution: {integrity: sha512-7EHzk0f7FVYICLUZTpyPk93IfcTUao++Xt1Sgb+Zk5dVOCYHabqLtlF5ywSoXIqyFlo0qlshEBxsrzHAGTWkDw==}
-    dev: false
 
   /@next/swc-android-arm-eabi/13.2.3:
     resolution: {integrity: sha512-mykdVaAXX/gm+eFO2kPeVjnOCKwanJ9mV2U0lsUGLrEdMUifPUjiXKc6qFAIs08PvmTMOLMNnUxqhGsJlWGKSw==}
@@ -3217,13 +3205,13 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.21.1
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /@types/eslint/8.21.1:
     resolution: {integrity: sha512-rc9K8ZpVjNcLs8Fp0dkozd5Pt2Apk1glO4Vgz8ix1u6yFByxfqo5Yavpy65o+93TAe24jr7v+eSBtFLvOQtCRQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
     dev: true
 
@@ -3239,7 +3227,6 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
-    dev: false
 
   /@types/hast/2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}

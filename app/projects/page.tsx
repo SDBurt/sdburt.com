@@ -4,7 +4,6 @@ import Card from '@/components/Card';
 
 export const metadata = {
   title: 'Projects',
-  description: 'Some of my projects',
 };
 
 export default async function ProjectsPage() {

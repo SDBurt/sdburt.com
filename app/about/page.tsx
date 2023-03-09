@@ -7,7 +7,6 @@ import TopTracks from '@/components/spotify/TopTracks';
 
 export const metadata = {
   title: 'About',
-  description: 'Software Engineer',
 };
 
 export default async function AboutPage() {

@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import projectsData from '@/data/projectsData';
 import { allBlogs } from 'contentlayer/generated';
 import { compareDesc } from 'date-fns';
@@ -8,30 +9,18 @@ import Tag from '@/components/Tag';
 
 const MAX_DISPLAY = 5;
 
-export const revalidate = 60;
 export const metadata = {
-  description: 'Developer, writer, and creator.',
-  openGraph: {
-    title: 'Sean Burt',
-    description: 'Developer, writer, and creator.',
-    url: 'https://sdburt.com',
-    siteName: 'Sean D. Burt',
-    images: [
-      {
-        url: 'https://sdburt.com/og.jpg',
-        width: 1920,
-        height: 1080,
-      },
-    ],
-    locale: 'en-US',
-    type: 'website',
-  },
+  title: 'Home',
+};
+
+const getAllPosts = () => {
+  return allBlogs.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date));
+  });
 };
 
 export default async function HomePage() {
-  const posts = allBlogs.sort((a, b) => {
-    return compareDesc(new Date(a.date), new Date(b.date));
-  });
+  const posts = getAllPosts();
 
   return (
     <>

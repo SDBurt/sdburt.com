@@ -1,16 +1,48 @@
+import './tailwind.css';
 import React from 'react';
+import { Inter as FontSans } from 'next/font/google';
 import RootLayout from '@/layouts/RootLayout';
 
+import { siteConfig } from '@/config/site';
+import { absoluteUrl, cn } from '@/lib/utils';
 import Analytics from '@/components/analytics';
 import { ThemeProvider } from '@/components/theme-provider';
-import '@/css/tailwind.css';
-import '@fontsource/inter/variable-full.css';
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
 
 export const metadata = {
   title: {
-    default: 'Sean Burt',
-    template: '%s | Sean Burt',
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
+  description: siteConfig.description,
+  keywords: [
+    'Next.js',
+    'React',
+    'Tailwind CSS',
+    'Server Components',
+    'Radix UI',
+    'Blog',
+    'Projects',
+  ],
+  authors: [
+    {
+      name: 'sdburt',
+      url: 'https://sdburt.com',
+    },
+  ],
+  creator: 'sdburt',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
   robots: {
     index: true,
     follow: true,
@@ -22,23 +54,45 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: absoluteUrl('/og.jpg'),
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
   twitter: {
-    title: 'Sean Burt',
+    title: siteConfig.name,
     card: 'summary_large_image',
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/og.jpg`],
+    creator: '@SeanBurt8',
   },
   icons: {
     shortcut: '/favicon.ico',
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
+  manifest: `${siteConfig.url}/site.webmanifest`,
 };
-
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
 
 export default function Layout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-      <body className="bg-white text-black antialiased dark:bg-gray-900 dark:text-white">
+    <html
+      lang="en"
+      className={cn('scroll-smooth antialiased font-sans', fontSans.variable)}
+      suppressHydrationWarning
+    >
+      <body className="bg-white text-black dark:bg-gray-900 dark:text-white">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <main className="mt-6 flex min-w-0 flex-auto flex-col px-2 md:mt-0 md:px-0">
             <RootLayout>{children}</RootLayout>

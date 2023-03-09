@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { SignIn, SignOut } from '@/app/guestbook/actions';
 import Form from '@/app/guestbook/form';
 import { queryBuilder } from 'lib/planetscale';
@@ -8,20 +9,17 @@ import { Database } from '@/lib/planetscale';
 
 type Guestbook = Database['guestbook'] & { id: number };
 
-async function getGuestbook() {
-  const data = await queryBuilder
+const getGetBookItems = cache(async () => {
+  return await queryBuilder
     .selectFrom('guestbook')
     .select(['id', 'body', 'created_by', 'updated_at'])
     .orderBy('updated_at', 'desc')
     .limit(20)
     .execute();
-
-  return data;
-}
+});
 
 export const metadata = {
   title: 'Guestbook',
-  description: 'Sign my guestbook and leave your mark.',
 };
 
 export const dynamic = 'force-dynamic';
@@ -32,7 +30,7 @@ export default async function GuestbookPage() {
 
   try {
     const [guestbookRes, sessionRes] = await Promise.allSettled([
-      getGuestbook(),
+      getGetBookItems(),
       getServerSession(authOptions),
     ]);
 

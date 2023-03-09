@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { allBlogs } from '@/.contentlayer/generated';
 
 import kebabCase from '@/lib/kebabCase';
@@ -5,9 +6,20 @@ import { getAllTags } from '@/lib/tags';
 import Link from '@/components/Link';
 import Tag from '@/components/Tag';
 
-export default async function TagsPage() {
+const getSortedTags = () => {
   const tags = getAllTags(allBlogs);
   const sortedTags = Object.keys(tags).sort((a, b) => tags[b] - tags[a]);
+
+  return { tags, sortedTags };
+};
+
+export const metadata = {
+  title: 'About',
+};
+
+export default async function TagsPage() {
+  const { tags, sortedTags } = getSortedTags();
+
   return (
     <section>
       <div className="flex flex-col items-start justify-start divide-y divide-gray-200 dark:divide-gray-700 md:mt-24 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">

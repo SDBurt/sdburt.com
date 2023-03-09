@@ -1,6 +1,7 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   experimental: {
     optimizeUniversalDefaults: true,
@@ -26,7 +27,7 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-inter)', ...fontFamily.sans],
       },
       colors: {
         primary: colors.emerald,

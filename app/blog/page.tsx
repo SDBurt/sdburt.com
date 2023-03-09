@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { allBlogs } from '@/.contentlayer/generated';
 import { compareDesc } from 'date-fns';
 
@@ -7,13 +8,16 @@ import Tag from '@/components/Tag';
 
 export const metadata = {
   title: 'Blog',
-  description: 'Read my thoughts on software development, design, and more.',
+};
+
+const getAllPosts = () => {
+  return allBlogs.sort((a, b) => {
+    return compareDesc(new Date(a.date), new Date(b.date));
+  });
 };
 
 export default async function BlogPage() {
-  const posts = allBlogs.sort((a, b) => {
-    return compareDesc(new Date(a.date), new Date(b.date));
-  });
+  const posts = getAllPosts();
 
   return (
     <section>
