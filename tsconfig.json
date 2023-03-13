@@ -30,7 +30,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next.config.mjs",
+    "next.config.js",
     ".contentlayer/generated",
     ".next/types/**/*.ts",
     "/home/sdburt/dev/web/sdburt-com/.next/types/**/*.ts"

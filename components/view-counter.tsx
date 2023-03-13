@@ -14,7 +14,7 @@ async function fetcher<JSON = any>(input, init): Promise<JSON> {
 }
 
 export default function ViewCounter({ slug, trackView }: { slug: string; trackView: boolean }) {
-  const { data } = useSWR<PostView[]>('/api/views', fetcher);
+  const { data, isLoading } = useSWR<PostView[]>('/api/views', fetcher);
   const viewsForSlug = data && data.find((view) => view.slug === slug);
   const views = new Number(viewsForSlug?.count || 0);
 
@@ -31,7 +31,7 @@ export default function ViewCounter({ slug, trackView }: { slug: string; trackVi
 
   return (
     <p className="text-sm font-semibold tracking-tighter text-gray-500 dark:text-gray-400">
-      {data ? `${views.toLocaleString()} views` : '​'}
+      {isLoading ? `Loading...` : data ? `${views.toLocaleString()} views` : '​'}
     </p>
   );
 }

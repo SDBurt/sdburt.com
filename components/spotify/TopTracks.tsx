@@ -7,7 +7,7 @@ import useSWR from 'swr';
 import Track from '@/components/spotify/track/Track';
 
 export default function Tracks() {
-  const { data } = useSWR<TopTracks>('/api/spotify/top-tracks', fetcher);
+  const { data, isLoading } = useSWR<TopTracks>('/api/spotify/top-tracks', fetcher);
 
   if (!data || !data.tracks) {
     return null;
@@ -15,9 +15,11 @@ export default function Tracks() {
 
   return (
     <>
-      {data.tracks.map((track, index) => (
-        <Track ranking={index + 1} key={`track-${index + 1}`} {...track} />
-      ))}
+      {isLoading
+        ? `Loading...`
+        : data.tracks.map((track, index) => (
+            <Track ranking={index + 1} key={`track-${index + 1}`} {...track} />
+          ))}
     </>
   );
 }

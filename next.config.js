@@ -1,4 +1,5 @@
-import { withContentlayer } from 'next-contentlayer';
+// import { withContentlayer } from 'next-contentlayer';
+const { withContentlayer } = require('next-contentlayer');
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
@@ -75,4 +76,4 @@ const nextConfig = {
   },
 };
 
-export default withContentlayer(nextConfig);
+module.exports = withContentlayer(nextConfig);
