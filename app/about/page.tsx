@@ -48,6 +48,14 @@ export default async function AboutPage() {
             </div>
           </div>
           <div className="prose pt-8 pb-8 dark:prose-dark xl:col-span-2">{bio}</div>
+          <div className="prose pt-8 pb-8 dark:prose-dark xl:col-span-2">
+            <p>
+              Schedule a call with me!{' '}
+              <Link href="https://cal.com/sdburt" target="_blank" rel="noopener noreferrer">
+                https://cal.com/sdburt
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
       <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
