@@ -13,11 +13,11 @@ export const metadata = {
   title: 'Home',
 };
 
-const getAllPosts = () => {
+const getAllPosts = cache(() => {
   return allBlogs.sort((a, b) => {
     return compareDesc(new Date(a.date), new Date(b.date));
   });
-};
+});
 
 export default async function HomePage() {
   const posts = getAllPosts();
