@@ -91,7 +91,7 @@ export default function Layout({ children }: RootLayoutProps) {
       className={cn('scroll-smooth antialiased font-sans', fontSans.variable)}
       suppressHydrationWarning
     >
-      <body className="bg-white text-black dark:bg-gray-900 dark:text-white w-screen">
+      <body className="bg-white text-black dark:bg-gray-900 dark:text-white">
         <ThemeProvider attribute="class" defaultTheme="dark">
           <main>
             <RootLayout>{children}</RootLayout>
