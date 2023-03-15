@@ -10,6 +10,7 @@ const ContentSecurityPolicy = `
   media-src 'none';
   connect-src *;
   font-src 'self';
+  manifest-src 'self';
 `;
 
 const securityHeaders = [

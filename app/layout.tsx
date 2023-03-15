@@ -82,7 +82,7 @@ export const metadata = {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
+  manifest: `${siteConfig.url}/manifest.json`,
 };
 
 export default function Layout({ children }: RootLayoutProps) {
@@ -93,7 +93,7 @@ export default function Layout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <body className="bg-white text-black dark:bg-gray-900 dark:text-white w-screen">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <main>
             <RootLayout>{children}</RootLayout>
             <Analytics />
