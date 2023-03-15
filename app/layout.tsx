@@ -82,7 +82,6 @@ export const metadata = {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
-  manifest: `${siteConfig.url}/manifest.json`,
 };
 
 export default function Layout({ children }: RootLayoutProps) {
@@ -100,7 +99,6 @@ export default function Layout({ children }: RootLayoutProps) {
           </main>
         </ThemeProvider>
       </body>
-      s
     </html>
   );
 }
