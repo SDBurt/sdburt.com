@@ -26,7 +26,7 @@ const RootLayout = ({ children }) => {
             </div>
             <Navbar />
           </header>
-          <main className="mb-auto">{children}</main>
+          <div className="mb-auto">{children}</div>
           <Footer />
         </div>
       </div>

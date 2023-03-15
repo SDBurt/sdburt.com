@@ -31,10 +31,10 @@ export default async function HomePage() {
             Hello
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Welcome to my site. I'm Sean, a software engineer with two years of experience
-            specializing in web development and machine learning. I have experience collaborating in
-            a startup environment, am quick to productivity, and continually seek the opportunity to
-            learn.
+            Welcome to my site. I'm Sean, a software engineer with three years of experience in web
+            development and two years of experience in machine learning. I have experience
+            collaborating in a startup environment, am quick to productivity, and continually seek
+            the opportunity to learn.
           </p>
         </div>
 

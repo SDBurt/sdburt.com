@@ -92,14 +92,15 @@ export default function Layout({ children }: RootLayoutProps) {
       className={cn('scroll-smooth antialiased font-sans', fontSans.variable)}
       suppressHydrationWarning
     >
-      <body className="bg-white text-black dark:bg-gray-900 dark:text-white">
+      <body className="bg-white text-black dark:bg-gray-900 dark:text-white w-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main className="mt-6 flex min-w-0 flex-auto flex-col px-2 md:mt-0 md:px-0">
+          <main>
             <RootLayout>{children}</RootLayout>
             <Analytics />
           </main>
         </ThemeProvider>
       </body>
+      s
     </html>
   );
 }
