@@ -64,8 +64,8 @@ export const metadata = {
     images: [
       {
         url: absoluteUrl('/og.png'),
-        width: 1200,
-        height: 630,
+        width: 1000,
+        height: 1000,
         alt: siteConfig.name,
       },
     ],
