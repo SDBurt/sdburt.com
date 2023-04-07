@@ -13,6 +13,11 @@ export async function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params, searchParams }) {
+  const post = allBlogs.find((post) => post.slug === params.slug);
+  return { title: post?.title || 'Blog' };
+}
+
 export default async function Blog({ params }) {
   const postIndex = allBlogs.findIndex((post) => post.slug === params.slug);
   const post = allBlogs.find((post) => post._raw.flattenedPath === params.slug);
