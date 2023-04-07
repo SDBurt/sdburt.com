@@ -59,12 +59,10 @@ const nextConfig = {
     domains: [
       'i.scdn.co', // Spotify Album Art
       'pbs.twimg.com', // Twitter Profile Picture
-      'cdn.sanity.io',
     ],
   },
   experimental: {
     appDir: true,
-    fontLoaders: [{ loader: '@next/font/google', options: { subsets: ['latin'] } }],
   },
   async headers() {
     return [
