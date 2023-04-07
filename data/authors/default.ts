@@ -4,10 +4,10 @@ export const sean = {
   occupation: 'Software Engineer',
   company: '',
   email: 'seandburt@gmail.com',
-  twitter: 'https://twitter.com/SeanBurt8',
-  linkedin: 'https://www.linkedin.com/in/seandburt/',
-  github: 'https://github.com/SDBurt',
-  kaggle: 'https://www.kaggle.com/seandburt',
+  twitter: 'https://link.sdburt.com/twitter',
+  linkedin: 'https://link.sdburt.com/linkedin',
+  github: 'https://link.sdburt.com/github',
+  kaggle: 'https://link.sdburt.com/kaggle',
   bio: `Sean Burt is a software engineering graduate specializing in AI from the University of
       Victoria. He previously worked at Hummingbird Drones, where he was the exclusive developer of
       the Fire AI project for the first few months before the team expanded. During this time, Sean

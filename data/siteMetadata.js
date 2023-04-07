@@ -11,12 +11,12 @@ exports.siteMetadata = {
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'seandburt@gmail.com',
-  github: 'https://github.com/SDBurt',
-  twitter: 'https://twitter.com/SeanBurt8',
+  github: 'https://link.sdburt.com/github',
+  twitter: 'https://link.sdburt.com/twitter',
   facebook: 'https://facebook.com/sean.burt',
-  kaggle: 'https://www.kaggle.com/seandburt',
+  kaggle: 'https://link.sdburt.com/kaggle',
   youtube: 'https://youtube.com/seanburt1014',
-  linkedin: 'https://www.linkedin.com/in/seandburt/',
+  linkedin: 'https://link.sdburt.com/linkedin',
   locale: 'en-US',
   analytics: {
     vercelAnalytics: true, // true or false
