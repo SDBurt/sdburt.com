@@ -9,10 +9,10 @@ interface CardProps {
 }
 
 const Card = ({ title, description, imgSrc, href }: CardProps) => (
-  <div className="md p-4 md:w-1/2" style={{ maxWidth: '544px' }}>
+  <div className="md p-4 h-full w-full" style={{ maxWidth: '544px' }}>
     <div
       className={`${
-        imgSrc && 'h-full'
+        imgSrc === undefined ? 'h-full' : ''
       }  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700`}
     >
       {imgSrc &&

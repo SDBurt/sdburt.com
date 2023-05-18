@@ -18,9 +18,11 @@ export default async function ProjectsPage() {
         </p>
       </div>
       <div className="container py-12">
-        <div className="-m-4 flex flex-wrap">
+        <div className="grid grid-cols-1 sm:grid-cols-2">
           {projectsData.map((d) => (
-            <Card key={d.title} title={d.title} description={d.description} href={d.href} />
+            <div key={d.title} className="w-full h-full col-span-1">
+              <Card title={d.title} description={d.description} href={d.href} />
+            </div>
           ))}
         </div>
       </div>

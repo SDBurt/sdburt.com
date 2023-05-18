@@ -6,6 +6,12 @@ export const projectsData = [
     href: 'https://sdburt.com',
   },
   {
+    title: 'Linktree Clone',
+    description: `A Bio and socials page with analytics for marketing`,
+    // imgSrc: '/static/images/google.png',
+    href: 'https://github.com/SDBurt/link-shortener',
+  },
+  {
     title: 'AI Site',
     description: `A personal playground and showcase of some ai & web intregrations. I used Upstash to cache requests and an IP rate limit to prevent abuse.`,
     // imgSrc: '/static/images/google.png',

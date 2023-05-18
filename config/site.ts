@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   ogImage: 'https://sdburt.com/og.png',
   links: {
     twitter: 'https://twitter.com/SeanBurt8',
-    github: 'https://github.com/sdburt/sdburt-com',
+    github: 'https://github.com/sdburt/sdburt.com',
   },
 };
 
