@@ -1,25 +1,25 @@
 export const projectsData = [
   {
+    title: 'LinkTour',
+    description: `An open-source link-in-bio app`,
+    // imgSrc: '/static/images/google.png',
+    href: 'https://github.com/SDBurt/linktour',
+  },
+  {
     title: 'Portfolio Site',
     description: `This site. I often add to the styling or content, so be sure to check back from time to time to see what I have been up to!`,
     // imgSrc: '/static/images/google.png',
     href: 'https://sdburt.com',
   },
   {
-    title: 'Linktree Clone',
-    description: `A Bio and socials page with analytics for marketing`,
-    // imgSrc: '/static/images/google.png',
-    href: 'https://github.com/SDBurt/link-shortener',
-  },
-  {
     title: 'AI Site',
-    description: `A personal playground and showcase of some ai & web intregrations. I used Upstash to cache requests and an IP rate limit to prevent abuse.`,
+    description: `A personal playground and showcase of some ai & web intregrations. I used Upstash to cache requests and an IP rate limit to prevent abuse`,
     // imgSrc: '/static/images/google.png',
     href: 'https://ai.sdburt.com',
   },
   {
     title: 'ReFocus',
-    description: `A Pomodoro timer app with extra functionality aimed at refocusing your attention to what matters.`,
+    description: `A Pomodoro timer app`,
     // imgSrc: '/static/images/google.png',
     href: 'https://refocus.vercel.app',
   },
