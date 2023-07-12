@@ -3,8 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import headerNavLinks from '@/data/headerNavLinks';
 
+import { MainNavItem } from 'types';
 import { cn } from '@/lib/utils';
 import MobileNav from '@/components/MobileNav';
 import ThemeSwitch from '@/components/ThemeSwitch';
@@ -27,7 +27,7 @@ function NavItem({ href, text }) {
           className={cn(
             navigationMenuTriggerStyle(),
             'hidden sm:inline-block',
-            isActive ? 'bg-gray-100 font-bold dark:bg-neutral-800' : 'font-normal'
+            isActive ? 'text-foreground' : 'text-foreground/60'
           )}
         >
           {text}
@@ -37,20 +37,24 @@ function NavItem({ href, text }) {
   );
 }
 
-const Navbar = () => {
+interface MainNavProps {
+  items: MainNavItem[];
+}
+
+const Navbar = ({ items }: MainNavProps) => {
   return (
     <>
-      <div className="flex items-center text-base leading-5">
+      <div className="flex items-center text-base leading-5 gap-3 justify-between w-full">
         {/* shadcn's nav */}
         <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList className="md:space-x-1">
-            {headerNavLinks.map((link) => (
+          <NavigationMenuList className="hidden md:flex gap-3">
+            {items.map((link) => (
               <NavItem key={link.href} text={link.title} href={link.href} />
             ))}
           </NavigationMenuList>
         </NavigationMenu>
+        <MobileNav items={items} />
         <ThemeSwitch />
-        <MobileNav />
       </div>
     </>
   );

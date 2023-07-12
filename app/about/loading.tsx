@@ -3,7 +3,7 @@ export default async function Loading() {
     <section>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-primary sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             About
           </h1>
         </div>
@@ -13,10 +13,10 @@ export default async function Loading() {
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
               <p>Loading...</p>
             </h3>
-            <div className="text-gray-500 dark:text-gray-400">
+            <div className="text-muted-foreground">
               <p>Loading...</p>
             </div>
-            <div className="text-gray-500 dark:text-gray-400">
+            <div className="text-muted-foreground">
               <p>Loading...</p>
             </div>
             <div className="flex space-x-3 pt-6">
@@ -33,7 +33,7 @@ export default async function Loading() {
           <h2 className="mb-4 mt-4 text-3xl font-bold tracking-tight text-black dark:text-white">
             Top Tracks
           </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400">
+          <p className="mb-4 text-muted-foreground">
             Curious what I'm currently listening to? Here's my top tracks on Spotify!
           </p>
           <p>Loading...</p>

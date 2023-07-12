@@ -1,4 +1,4 @@
-import { siteMetadata } from '@/data/siteMetadata';
+import { siteConfig } from '@/config/site';
 
 const formatDate = (date) => {
   const options: Intl.DateTimeFormatOptions = {
@@ -7,7 +7,7 @@ const formatDate = (date) => {
     day: 'numeric',
   };
 
-  const now = new Date(date).toLocaleDateString(siteMetadata.locale, options);
+  const now = new Date(date).toLocaleDateString(siteConfig.locale, options);
 
   return now;
 };

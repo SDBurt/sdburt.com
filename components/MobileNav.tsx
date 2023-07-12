@@ -1,11 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import headerNavLinks from '@/data/headerNavLinks';
+import { MainNavItem } from '@/types';
 
 import Link from '@/components/Link';
 
-const MobileNav = () => {
+interface MobileNavProps {
+  items: MainNavItem[];
+}
+
+const MobileNav = ({ items }: MobileNavProps) => {
   const [navShow, setNavShow] = useState(false);
 
   const onToggleNav = () => {
@@ -32,7 +36,7 @@ const MobileNav = () => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          className="text-gray-900 dark:text-gray-100"
+          className="text-primary"
         >
           <path
             fillRule="evenodd"
@@ -57,7 +61,7 @@ const MobileNav = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="text-gray-900 dark:text-gray-100"
+              className="text-primary"
             >
               <path
                 fillRule="evenodd"
@@ -68,11 +72,11 @@ const MobileNav = () => {
           </button>
         </div>
         <nav className="fixed mt-8 h-full">
-          {headerNavLinks.map((link) => (
+          {items.map((link) => (
             <div key={link.title} className="px-12 py-4">
               <Link
                 href={link.href}
-                className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+                className="text-2xl font-bold tracking-widest text-primary"
                 onClick={onToggleNav}
               >
                 {link.title}

@@ -14,9 +14,9 @@ export default async function AboutPage() {
 
   return (
     <section>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="divide-y ">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-primary sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             About
           </h1>
         </div>
@@ -30,26 +30,28 @@ export default async function AboutPage() {
               className="h-48 w-48 rounded-full"
             />
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
-            <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
-            <div className="text-gray-500 dark:text-gray-400">{company}</div>
+            <div className="text-muted-foreground">{occupation}</div>
+            <div className="text-muted-foreground">{company}</div>
             <div className="flex space-x-3 pt-6">
-              <Link href={`mailto:${email}`} className={'hover:text-primary-500'}>
+              <Link href={`mailto:${email}`} className={'hover:text-primary'}>
                 <Icons.mail size={20} />
               </Link>
-              <Link href={linkedin} className={'hover:text-primary-500'}>
+              <Link href={linkedin} className={'hover:text-primary'}>
                 <Icons.linkedin height={20} width={20} />
               </Link>
-              <Link href={github} className={'hover:text-primary-500'}>
+              <Link href={github} className={'hover:text-primary'}>
                 <Icons.github height={20} width={20} />
               </Link>
-              <Link href={twitter} className={'hover:text-primary-500'}>
+              <Link href={twitter} className={'hover:text-primary'}>
                 <Icons.twitter height={20} width={20} />
               </Link>
             </div>
           </div>
-          <div className="prose pt-8 pb-8 dark:prose-dark xl:col-span-2">{bio}</div>
-          <div className="prose pt-8 pb-8 dark:prose-dark xl:col-span-2">
-            <p>
+          <div className="text-muted-foreground prose pt-8 pb-8 dark:prose-dark xl:col-span-2">
+            {bio}
+          </div>
+          <div className="text-muted-foreground prose pt-8 pb-8 dark:prose-dark xl:col-span-2">
+            <p className="text-muted-foreground">
               Schedule a call with me!{' '}
               <Link href="https://cal.com/sdburt" target="_blank" rel="noopener noreferrer">
                 https://cal.com/sdburt
@@ -63,7 +65,7 @@ export default async function AboutPage() {
           <h2 className="mb-4 mt-4 text-3xl font-bold tracking-tight text-black dark:text-white">
             Top Tracks
           </h2>
-          <p className="mb-4 text-gray-600 dark:text-gray-400">
+          <p className="mb-4 text-muted-foreground">
             Curious what I'm currently listening to? Here's my top tracks on Spotify!
           </p>
           <TopTracks />

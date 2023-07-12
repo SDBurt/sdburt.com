@@ -1,16 +1,24 @@
-import './tailwind.css';
-import React from 'react';
 import { Inter as FontSans } from 'next/font/google';
+import localFont from 'next/font/local';
+
+import '@/styles/globals.css';
+import React from 'react';
 import RootLayout from '@/layouts/RootLayout';
 
 import { siteConfig } from '@/config/site';
-import { absoluteUrl, cn } from '@/lib/utils';
-import Analytics from '@/components/analytics';
+import { cn } from '@/lib/utils';
+import { Analytics } from '@/components/analytics';
+import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
 
 const fontSans = FontSans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sans',
+});
+
+const fontHeading = localFont({
+  src: '../assets/fonts/CalSans-SemiBold.woff2',
+  variable: '--font-heading',
 });
 
 interface RootLayoutProps {
@@ -61,14 +69,6 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: absoluteUrl('/og.png'),
-        width: 1000,
-        height: 1000,
-        alt: siteConfig.name,
-      },
-    ],
   },
   twitter: {
     title: siteConfig.name,
@@ -86,17 +86,19 @@ export const metadata = {
 
 export default function Layout({ children }: RootLayoutProps) {
   return (
-    <html
-      lang="en"
-      className={cn('scroll-smooth antialiased font-sans', fontSans.variable)}
-      suppressHydrationWarning
-    >
-      <body className="bg-white text-black dark:bg-gray-900 dark:text-white">
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <main>
-            <RootLayout>{children}</RootLayout>
-            <Analytics />
-          </main>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={cn(
+          'min-h-screen bg-background font-sans antialiased',
+          fontSans.variable,
+          fontHeading.variable
+        )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <RootLayout>{children}</RootLayout>
+          <Analytics />
+          <TailwindIndicator />
         </ThemeProvider>
       </body>
     </html>

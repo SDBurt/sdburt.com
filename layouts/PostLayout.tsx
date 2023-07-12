@@ -1,11 +1,9 @@
-import { siteMetadata } from '@/data/siteMetadata';
-
+import { siteConfig } from '@/config/site';
 import Image from '@/components/Image';
 import Link from '@/components/Link';
 import PageTitle from '@/components/PageTitle';
 import ScrollTop from '@/components/ScrollTop';
 import Tag from '@/components/Tag';
-import ViewCounter from '@/components/view-counter';
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -19,16 +17,16 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
     <>
       <ScrollTop />
       <article>
-        <div>
+        <div className="flex flex-col space-y-6 items-center">
           <header className="pt-6 xl:pb-3">
             <div className="flex flex-col-reverse sm:flex-col">
               <div className="space-y-1 text-center">
                 <dl className="space-y-6">
                   <div>
                     <dt className="sr-only">Published on</dt>
-                    <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    <dd className="text-base font-medium leading-6 text-muted-foreground">
                       <time dateTime={date}>
-                        {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                        {new Date(date).toLocaleDateString(siteConfig.locale, postDateTemplate)}
                       </time>
                     </dd>
                   </div>
@@ -37,17 +35,9 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
                   <PageTitle>{title}</PageTitle>
                 </div>
               </div>
-              <div className="mt-2 mb-2 grid grid-cols-[auto_1fr_auto] items-center text-sm">
-                <div className="rounded-md py-1" />
-                <div className="mx-2 h-px bg-gray-200 dark:bg-gray-700" />
-                <ViewCounter slug={slug} trackView={true} />
-              </div>
             </div>
           </header>
-          <div
-            className="divide-y divide-gray-200 pb-8 dark:divide-gray-700 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0"
-            style={{ gridTemplateRows: 'auto 1fr' }}
-          >
+          <div className="divide-y pb-8" style={{ gridTemplateRows: 'auto 1fr' }}>
             <dl className="pt-3 pb-6 xl:border-b xl:border-gray-200 xl:pt-6 xl:dark:border-gray-700">
               <dt className="sr-only">Author</dt>
               <dd>
@@ -66,14 +56,11 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
                         )}
                         <dl className="whitespace-nowrap text-sm font-medium leading-5">
                           <dt className="sr-only">Name</dt>
-                          <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
+                          <dd className="text-primary">{author.name}</dd>
                           <dt className="sr-only">Twitter</dt>
                           <dd>
                             {author.twitter && (
-                              <Link
-                                href={author.twitter}
-                                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                              >
+                              <Link href={author.twitter} className="text-primary  ">
                                 {author.twitter.replace('https://twitter.com/', '@')}
                               </Link>
                             )}
@@ -85,16 +72,14 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
               </dd>
             </dl>
 
-            <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none pt-3 pb-3 dark:prose-dark">{children}</div>
+            <div className="divide-y xl:pb-0 w-full">
+              <div className="text-muted-foreground pt-6 pb-6 ">{children}</div>
             </div>
             <footer>
-              <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
+              <div className=" text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                      Tags
-                    </h2>
+                    <h2 className="text-xs uppercase tracking-wide text-muted-foreground">Tags</h2>
                     <div className="flex flex-wrap">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
@@ -106,20 +91,20 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && (
                       <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                        <h2 className="text-xs uppercase tracking-wide text-muted-foreground">
                           Previous Article
                         </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <div className="text-primary  ">
                           <Link href={prev.slug}>{prev.title}</Link>
                         </div>
                       </div>
                     )}
                     {next && (
                       <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                        <h2 className="text-xs uppercase tracking-wide text-muted-foreground">
                           Next Article
                         </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                        <div className="text-primary  ">
                           <Link href={next.slug}>{next.title}</Link>
                         </div>
                       </div>
@@ -128,10 +113,7 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
                 )}
               </div>
               <div className="pt-4 xl:pt-8">
-                <Link
-                  href="/blog"
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                >
+                <Link href="/blog" className="text-primary  ">
                   &larr; Back to the blog
                 </Link>
               </div>
