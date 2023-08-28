@@ -4,8 +4,8 @@ import PostLayout from '@/layouts/PostLayout';
 import { allBlogs } from 'contentlayer/generated';
 import lodash from 'lodash';
 
-import PageTitle from '@/components/PageTitle';
 import { Mdx } from '@/components/mdx';
+import PageTitle from '@/components/PageTitle';
 
 export async function generateStaticParams() {
   return allBlogs.map((post) => ({
