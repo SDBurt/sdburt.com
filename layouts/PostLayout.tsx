@@ -18,7 +18,7 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
       <ScrollTop />
       <article>
         <div className="flex flex-col space-y-6 items-center">
-          <header className="pt-6 xl:pb-3">
+          <header className="pt-6">
             <div className="flex flex-col-reverse sm:flex-col">
               <div className="space-y-1 text-center">
                 <dl className="space-y-6">
@@ -37,7 +37,7 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
               </div>
             </div>
           </header>
-          <div className="divide-y pb-8" style={{ gridTemplateRows: 'auto 1fr' }}>
+          <div className="py-8" style={{ gridTemplateRows: 'auto 1fr' }}>
             <dl className="pt-3 pb-6 xl:border-b xl:border-gray-200 xl:pt-6 xl:dark:border-gray-700">
               <dt className="sr-only">Author</dt>
               <dd>

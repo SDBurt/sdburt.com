@@ -32,8 +32,7 @@
     "**/*.tsx",
     "next.config.js",
     ".contentlayer/generated",
-    ".next/types/**/*.ts",
-    "/home/sdburt/dev/web/sdburt-com/.next/types/**/*.ts"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

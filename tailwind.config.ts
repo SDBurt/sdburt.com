@@ -1,20 +1,21 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import typeographyPlugin from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
+import animatePlugin from 'tailwindcss-animate';
+
+export default {
   darkMode: ['class'],
   content: [
-    './app/**/*.{js,ts,tsx}',
-    './pages/**/*.{js,ts,tsx}',
-    './components/**/*.{js,ts,tsx}',
-    './layouts/**/*.{js,ts,tsx}',
-    './lib/**/*.{js,ts,tsx}',
-    './content/**/*.mdx',
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   theme: {
     container: {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '960px',
+        '2xl': '1400px',
       },
     },
     extend: {
@@ -60,12 +61,12 @@ module.exports = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: 0 },
+          from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
+          to: { height: '0' },
         },
       },
       animation: {
@@ -74,5 +75,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
-};
+  plugins: [animatePlugin, typeographyPlugin],
+} satisfies Config;

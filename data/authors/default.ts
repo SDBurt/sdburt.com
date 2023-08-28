@@ -4,9 +4,9 @@ export const sean = {
   occupation: 'Software Engineer',
   company: '',
   email: 'seandburt@gmail.com',
-  twitter: 'https://link.sdburt.com/twitter',
-  linkedin: 'https://link.sdburt.com/linkedin',
-  github: 'https://link.sdburt.com/github',
+  twitter: 'https://twitter.com/SeanBurt8',
+  linkedin: 'https://linkedin.com/in/seandburt/',
+  github: 'https://github.com/sdburt',
   kaggle: 'https://link.sdburt.com/kaggle',
   bio: `Sean Burt is a software engineering graduate specializing in AI from the University of
       Victoria. He previously worked at Hummingbird Drones, where he was the exclusive developer of
