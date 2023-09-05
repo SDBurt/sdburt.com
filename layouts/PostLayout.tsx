@@ -3,7 +3,6 @@ import Image from '@/components/Image';
 import Link from '@/components/Link';
 import PageTitle from '@/components/PageTitle';
 import ScrollTop from '@/components/ScrollTop';
-import Tag from '@/components/Tag';
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
@@ -12,11 +11,11 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
   day: 'numeric',
 };
 
-export default function PostLayout({ authors, slug, date, title, tags, children, next, prev }) {
+export default function PostLayout({ authors, slug, date, title, children, next, prev }) {
   return (
-    <>
+    <section>
       <ScrollTop />
-      <article>
+      <article className="w-full">
         <div className="flex flex-col space-y-6 items-center">
           <header className="pt-6">
             <div className="flex flex-col-reverse sm:flex-col">
@@ -77,16 +76,6 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
             </div>
             <footer>
               <div className=" text-sm font-medium leading-5 xl:col-start-1 xl:row-start-2 xl:divide-y">
-                {tags && (
-                  <div className="py-4 xl:py-8">
-                    <h2 className="text-xs uppercase tracking-wide text-muted-foreground">Tags</h2>
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
-                    </div>
-                  </div>
-                )}
                 {(next || prev) && (
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && (
@@ -121,6 +110,6 @@ export default function PostLayout({ authors, slug, date, title, tags, children,
           </div>
         </div>
       </article>
-    </>
+    </section>
   );
 }

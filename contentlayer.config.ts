@@ -1,6 +1,7 @@
 // contentlayer.config.js
 
-import { defineDocumentType, makeSource, type ComputedFields } from 'contentlayer/source-files';
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+import type { ComputedFields } from 'contentlayer/source-files';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
@@ -28,12 +29,6 @@ export const Blog = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
-    tags: {
-      type: 'list',
-      of: { type: 'string' },
-      description: 'list of tags',
-      required: true,
-    },
     draft: {
       type: 'boolean',
       description: 'flag to show or hide from production',
@@ -56,6 +51,8 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       [
+        // Contentlayer builds but types don't match?
+        // @ts-ignore
         rehypePrettyCode,
         {
           theme: 'one-dark-pro',

@@ -42,7 +42,6 @@ export default async function Blog({ params }) {
             slug={post.slug}
             date={post.date}
             title={post.title}
-            tags={post.tags}
             authors={authorDetails}
             next={next}
             prev={prev}

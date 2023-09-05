@@ -26,7 +26,7 @@ export default async function HomePage() {
     <section className="w-full">
       <div className="divide-y">
         {/* Header */}
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+        <div className="space-y-2 pt-6 pb-8">
           <h1 className="text-2xl font-extrabold leading-9 tracking-tight md:text-3xl">Hello 👋</h1>
           <p className="leading-7 text-muted-foreground">
             Welcome to my site. I'm Sean, a software engineer with three years of professional
@@ -38,7 +38,7 @@ export default async function HomePage() {
 
         {/* Featured Projects */}
         <section>
-          <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+          <div className="space-y-2 pt-6 pb-8">
             <h2 className="text-2xl font-bold leading-9 tracking-tight text-primary ">
               Featured Projects
             </h2>
@@ -60,11 +60,11 @@ export default async function HomePage() {
 
         {/* Latest Posts */}
         <section>
-          <div className="space-y-2 pt-6 pb-8 md:space-y-5 w-full">
+          <div className="space-y-2 pt-6 pb-8 w-full">
             <h2 className="text-2xl font-bold leading-9 tracking-tight text-primary">
               Latest Posts
             </h2>
-            <ul className="w-full flex flex-col space-y-8">
+            <ul className="w-full flex flex-col space-y-4">
               {!posts.length && 'No posts found.'}
               {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
                 const { slug, date, title } = frontMatter;

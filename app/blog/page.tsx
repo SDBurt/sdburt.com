@@ -1,11 +1,9 @@
-import { cache } from 'react';
 import { allBlogs } from '@/.contentlayer/generated';
 import { compareDesc } from 'date-fns';
 
 import formatDate from '@/lib/formatDate';
+import FeatureItem from '@/components/feature-item';
 import Link from '@/components/Link';
-import Tag from '@/components/Tag';
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata = {
   title: 'Blog',
@@ -36,12 +34,7 @@ export default async function BlogPage() {
             return (
               <li key={`blog-${slug}`} className="w-full">
                 <Link href={`/blog/${slug}`} className="text-left w-full">
-                  <Card className="w-full">
-                    <CardHeader className="p-6 w-full">
-                      <CardTitle>{title}</CardTitle>
-                      <CardDescription>{formatDate(date)}</CardDescription>
-                    </CardHeader>
-                  </Card>
+                  <FeatureItem title={title} description={formatDate(date)} />
                 </Link>
               </li>
             );
