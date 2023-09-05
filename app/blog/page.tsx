@@ -21,12 +21,13 @@ export default async function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <section>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-primary sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Blog
-          </h1>
+    <section className="w-full">
+      <div className="divide-y">
+        <div className="space-y-2 pt-6 pb-4">
+          <h1 className="text-2xl font-extrabold leading-9 tracking-tight md:text-3xl">Blog</h1>
+          <p className="text-lg leading-7 text-muted-foreground">
+            Showcase of my thoughts and interests
+          </p>
         </div>
         <ul className="w-full pt-4 flex flex-col space-y-4">
           {!posts.length && 'No posts found.'}

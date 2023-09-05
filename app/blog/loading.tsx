@@ -1,13 +1,13 @@
+import { Skeleton } from '@/components/ui/skeleton';
+
 export default async function Loading() {
   return (
     <section>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="divide-y">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-primary sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Blog
-          </h1>
+          <Skeleton className="w-full h-[50px]" />
         </div>
-        <p>Loading...</p>
+        <Skeleton className="w-full h-[50px]" />
       </div>
     </section>
   );

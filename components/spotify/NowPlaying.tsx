@@ -6,6 +6,8 @@ import { NowPlayingSong } from 'lib/types';
 import { animate } from 'motion';
 import useSWR from 'swr';
 
+import { Skeleton } from '../ui/skeleton';
+
 function AnimatedBars() {
   useEffect(() => {
     animate(
@@ -83,12 +85,12 @@ export default function NowPlaying() {
       )}
       <div className="inline-flex w-full max-w-full flex-col truncate sm:flex-row">
         {isLoading ? (
-          `Loading...`
+          <Skeleton className="w-[60px] h-[20px]" />
         ) : (
           <>
             {data?.songUrl ? (
               <a
-                className="capsize max-w-max truncate font-medium  text-gray-800 dark:text-gray-200"
+                className="capsize max-w-max truncate font-medium text-primary"
                 href={data.songUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -96,12 +98,10 @@ export default function NowPlaying() {
                 {data.title}
               </a>
             ) : (
-              <p className="capsize font-medium text-gray-800 dark:text-gray-200">Not Playing</p>
+              <p className="capsize font-medium text-primary">Not Playing</p>
             )}
-            <span className="capsize mx-2 hidden text-gray-500 dark:text-gray-300 sm:block">
-              {' – '}
-            </span>
-            <p className="capsize max-w-max truncate text-gray-500 dark:text-gray-300">
+            <span className="capsize mx-2 hidden text-muted-foreground sm:block">{' – '}</span>
+            <p className="capsize max-w-max truncate text-muted-foreground">
               {data?.artist ?? 'Spotify'}
             </p>
           </>

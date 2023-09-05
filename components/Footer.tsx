@@ -15,8 +15,7 @@ export default function Footer() {
         <div className="flex w-full flex-row items-center justify-between space-x-2 text-muted-foreground">
           <div className="flex flex-row space-x-2 pb-4 pt-3">
             <div>
-              Made with{' '}
-              <b className="cursor-default text-xl font-semibold hover:text-red-600">♥️</b> by{' '}
+              Made with <b className="cursor-default font-semibold hover:text-red-600">♥️</b> by{' '}
               {siteConfig.author}
             </div>
           </div>

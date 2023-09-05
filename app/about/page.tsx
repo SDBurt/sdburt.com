@@ -13,14 +13,12 @@ export default async function AboutPage() {
   const { name, avatar, occupation, company, email, twitter, linkedin, github, bio } = sean;
 
   return (
-    <section>
-      <div className="divide-y ">
+    <section className="w-full">
+      <div className="divide-y">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-primary sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            About
-          </h1>
+          <h1 className="text-2xl font-extrabold leading-9 tracking-tight md:text-3xl">About</h1>
         </div>
-        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+        <div className="flex flex-col items-center space-y-2">
           <div className="flex flex-col items-center pt-8">
             <Image
               src={avatar}
@@ -46,25 +44,24 @@ export default async function AboutPage() {
                 <Icons.twitter height={20} width={20} />
               </Link>
             </div>
-          </div>
-          <div className="text-muted-foreground prose pt-8 pb-8 dark:prose-dark xl:col-span-2">
-            {bio}
-          </div>
-          <div className="text-muted-foreground prose pt-8 pb-8 dark:prose-dark xl:col-span-2">
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground pt-6">
               Schedule a call with me!{' '}
-              <Link href="https://cal.com/sdburt" target="_blank" rel="noopener noreferrer">
-                https://cal.com/sdburt
+              <Link
+                className="text-primary underline"
+                href="https://cal.com/sdburt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                cal.com/sdburt
               </Link>
             </p>
           </div>
+          <div className="text-muted-foreground prose pt-8 pb-8 dark:prose-dark">{bio}</div>
         </div>
       </div>
-      <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
-        <div className="flex flex-col items-start justify-center xl:col-span-2 xl:col-start-2">
-          <h2 className="mb-4 mt-4 text-3xl font-bold tracking-tight text-black dark:text-white">
-            Top Tracks
-          </h2>
+      <div className="flex flex-col items-center space-y-2 w-full">
+        <div className="flex flex-col items-start justify-center w-full">
+          <h2 className="mb-4 mt-4 text-3xl font-bold tracking-tight">Top Tracks</h2>
           <p className="mb-4 text-muted-foreground">
             Curious what I'm currently listening to? Here's my top tracks on Spotify!
           </p>

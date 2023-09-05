@@ -1,6 +1,7 @@
 import typographyPlugin from '@tailwindcss/typography';
 import type { Config } from 'tailwindcss';
 import animatePlugin from 'tailwindcss-animate';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 export default {
   darkMode: ['class'],
@@ -15,7 +16,7 @@ export default {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '1400px',
+        xl: '65ch',
       },
     },
     extend: {
@@ -58,6 +59,10 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+        heading: ['var(--font-heading)', ...fontFamily.sans],
       },
       keyframes: {
         'accordion-down': {
