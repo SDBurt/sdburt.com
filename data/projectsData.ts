@@ -2,12 +2,12 @@ export const projectsData = [
   {
     title: 'PostEase',
     description: `An open-source post scheduler app`,
-    href: 'https://post-ease.vercel.app',
+    href: 'https://github.com/SDBurt/postease',
   },
   {
     title: 'LinkTour',
     description: `An open-source link-in-bio app`,
-    href: 'https://www.linktour.ca',
+    href: 'https://github.com/SDBurt/linktour',
   },
   {
     title: 'Portfolio Site',
