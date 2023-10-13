@@ -40,7 +40,7 @@ export default async function HomePage() {
         <section>
           <div className="space-y-2 pt-6 pb-8">
             <h2 className="text-2xl font-bold leading-9 tracking-tight text-primary ">
-              Featured Projects
+              Featured Projects 🔨
             </h2>
             <ul className="w-full flex flex-col space-y-4">
               {!projectsData.length && 'No posts found.'}
@@ -62,7 +62,7 @@ export default async function HomePage() {
         <section>
           <div className="space-y-2 pt-6 pb-8 w-full">
             <h2 className="text-2xl font-bold leading-9 tracking-tight text-primary">
-              Latest Posts
+              Latest Posts 📝
             </h2>
             <ul className="w-full flex flex-col space-y-4">
               {!posts.length && 'No posts found.'}
