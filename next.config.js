@@ -12,9 +12,6 @@ const nextConfig = {
       'pbs.twimg.com', // Twitter Profile Picture
     ],
   },
-  experimental: {
-    appDir: true,
-  },
 };
 
 module.exports = withContentlayer(nextConfig);
