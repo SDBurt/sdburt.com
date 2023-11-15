@@ -1,9 +1,12 @@
-import { Inter as FontSans } from 'next/font/google';
 import localFont from 'next/font/local';
+import { GeistMono } from 'geist/font/mono';
+// import { Inter as FontSans } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
 
 import '@/styles/globals.css';
 
 import React from 'react';
+import { Viewport } from 'next';
 import RootLayout from '@/layouts/RootLayout';
 
 import { siteConfig } from '@/config/site';
@@ -11,11 +14,6 @@ import { cn } from '@/lib/utils';
 import { Analytics } from '@/components/analytics';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
-
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans',
-});
 
 const fontHeading = localFont({
   src: '../assets/fonts/CalSans-SemiBold.woff2',
@@ -48,10 +46,6 @@ export const metadata = {
     },
   ],
   creator: 'sdburt',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
   robots: {
     index: true,
     follow: true,
@@ -85,6 +79,13 @@ export const metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+};
+
 export default function Layout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -92,8 +93,9 @@ export default function Layout({ children }: RootLayoutProps) {
       <body
         className={cn(
           'min-h-screen bg-background font-sans antialiased sm:w-screen sm:overflow-x-hidden',
-          fontSans.variable,
-          fontHeading.variable
+          fontHeading.variable,
+          GeistSans.variable,
+          GeistMono.variable
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

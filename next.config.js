@@ -6,6 +6,9 @@ const { withContentlayer } = require('next-contentlayer');
  */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    // ppr: true,
+  },
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
