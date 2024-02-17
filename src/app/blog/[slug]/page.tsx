@@ -54,7 +54,16 @@ export default async function BlogPostPage({
     );
   }
 
-  let postDetails: (BlogPost & { views: number }) | null | undefined;
+  let postDetails:
+    | {
+        id: number;
+        name: string | null;
+        slug: string | null;
+        views: number | null;
+        createdAt: Date;
+        updatedAt: Date | null;
+      }
+    | undefined;
   try {
     postDetails = await api.post.getPost.query({ slug: post.slug });
   } catch (err) {
