@@ -54,13 +54,22 @@ export default async function BlogPostPage({
     );
   }
 
-  const postDetails = await api.post.getPost.query({ slug: post.slug });
-
-  if (!postDetails) {
-    await api.post.createPost.mutate({ name: post.title, slug: post.slug });
+  let postDetails: (BlogPost & { views: number }) | null | undefined;
+  try {
+    postDetails = await api.post.getPost.query({ slug: post.slug });
+  } catch (err) {
+    console.error(err);
   }
 
-  const views = !postDetails ? 0 : postDetails.views ?? 0;
+  if (!postDetails) {
+    try {
+      await api.post.createPost.mutate({ name: post.title, slug: post.slug });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  const views = !postDetails ? 0 : postDetails?.views ?? 0;
 
   return (
     <PostLayout
